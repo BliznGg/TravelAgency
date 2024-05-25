@@ -1,0 +1,236 @@
+@media (min-width: 320px) {
+    .advantages {
+        padding: 15px 0;
+        background-color: var(--Background-color);
+    }
+}
+
+@media (min-width: 576px) {
+    .advantages {
+        padding: 20px 0;
+        background-color: var(--Background-color);
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages {
+        padding: 120px 0;
+    }
+}
+
+@media (min-width: 1920px) {
+    .advantages {
+        padding: 0;
+        background-image: none;
+        background-color: var(--Background-color-1920px);
+    }
+}
+
+@media (min-width: 400px) {
+    .advantages__flex {
+        display: flex;
+    }
+}
+
+@media (min-width: 576px) {
+    .advantages__flex {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 576px) {
+    .advantages__wrapper {
+        flex: 1;
+    }
+}
+
+@media (min-width: 320px) {
+    .advantages__image {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+}
+
+@media (min-width: 320px) {
+    .advantages__GirlImage {
+        display: none;
+    }
+}
+
+@media (min-width: 400px) {
+    .advantages__GirlImage {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 576px) {
+    .advantages__GirlImage {
+        width: 646px;
+        height: 540px;
+        object-fit: cover;
+    }
+}
+@media (min-width: 320px) {
+    .advantages__icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (min-width: 320px) {
+    .advantages__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages__list {
+        padding-left: 50px;
+        width: 54%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+}
+
+@media (min-width: 320px) {
+    .advantages__item {
+        display: flex;
+        padding: 5px 15px;
+        width: 100%;
+        align-items: center;
+        border-radius: 8px;
+        background-color: var(--White);
+    }
+}
+
+@media (min-width: 576px) {
+    .advantages__item {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages__item {
+        width: calc((100% - 25px) / 2);
+        justify-content: center;
+        padding: 12px 15px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .advantages__item {
+        position: absolute;
+        width: auto;
+        padding: 16px 16px;
+    }
+}
+
+@media (min-width: 320px) {
+    .advantages__ItemDescription {
+        color: var(--Black);
+        font-family: var(--font-Poppins);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: var(--weight-400);
+        line-height: 40px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages__ItemDescription {
+        font-size: 24px;
+        line-height: normal;
+    }
+}
+
+@media (min-width: 320px) {
+    .advantages__title {
+        margin-bottom: 4px;
+        color: var(--Orange);
+        font-family: var(--font-Poppins);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: var(--weight-400);
+        line-height: normal;
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages__title {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 320px) {
+    .advantages__description {
+        color: var(--Black);
+        font-family: var(--font-Poppins);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: var(--weight-700);
+        line-height: normal;
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages__description {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .TelephoneIconSize {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .AdvantagesItem1 {
+        top: 50%;
+        right: 37%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .AdvantagesItem2 {
+        top: 50%;
+        right: 4%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .AdvantagesItem3 {
+        bottom: -25%;
+        right: 30%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .AdvantagesItem4 {
+        bottom: -13%;
+        right: 5%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .AdvantagesItem5 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .AdvantagesItem5 {
+        bottom: -46%;
+        right: 4%;
+    }
+}
+
+
