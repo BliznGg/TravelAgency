@@ -12,17 +12,9 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 922px) {
     .advantages {
-        padding: 120px 0;
-    }
-}
-
-@media (min-width: 1920px) {
-    .advantages {
-        padding: 0;
-        background-image: none;
-        background-color: var(--Background-color-1920px);
+        background-color: transparent;
     }
 }
 
@@ -32,16 +24,28 @@
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 400px) {
     .advantages__flex {
-        display: flex;
-        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 800px) {
+    .advantages__flex {
+        min-height: 370px;
     }
 }
 
 @media (min-width: 576px) {
-    .advantages__wrapper {
-        flex: 1;
+    .advantages__flex {
+        display: flex;
+    }
+}
+
+@media (min-width: 922px) {
+    .advantages__flex {
+        position: unset;
     }
 }
 
@@ -62,16 +66,33 @@
 @media (min-width: 400px) {
     .advantages__GirlImage {
         display: inline-block;
+        position: absolute;
+        object-fit: cover;
+        width: auto;
+        height: auto;
+        top: -77px;
+        right: -164px;
+        max-width: 566px;
     }
 }
 
+
 @media (min-width: 576px) {
     .advantages__GirlImage {
-        width: 646px;
-        height: 540px;
-        object-fit: cover;
+        top: -79px;
+        right: -61px;
     }
 }
+
+@media (min-width: 922px) {
+    .advantages__GirlImage {
+        position: absolute;
+        max-width: 824px;
+        top: 7px;
+        right: -89px;
+    }
+}
+
 @media (min-width: 320px) {
     .advantages__icon {
         width: 35px;
@@ -85,16 +106,16 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 25px;
+        z-index: 1;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
     .advantages__list {
-        padding-left: 50px;
         width: 54%;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 25px;
+        gap: 25px 25px;
     }
 }
 
@@ -116,7 +137,7 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
     .advantages__item {
         width: calc((100% - 25px) / 2);
         justify-content: center;
@@ -124,11 +145,10 @@
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 922px) {
     .advantages__item {
         position: absolute;
-        width: auto;
-        padding: 16px 16px;
+        width: unset;
     }
 }
 
@@ -140,13 +160,6 @@
         font-style: normal;
         font-weight: var(--weight-400);
         line-height: 40px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .advantages__ItemDescription {
-        font-size: 24px;
-        line-height: normal;
     }
 }
 
@@ -162,12 +175,6 @@
     }
 }
 
-@media (min-width: 1200px) {
-    .advantages__title {
-        font-size: 20px;
-    }
-}
-
 @media (min-width: 320px) {
     .advantages__description {
         color: var(--Black);
@@ -179,58 +186,49 @@
     }
 }
 
-@media (min-width: 1200px) {
-    .advantages__description {
-        font-size: 24px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .TelephoneIconSize {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-@media (min-width: 1920px) {
+@media (min-width: 922px) {
     .AdvantagesItem1 {
-        top: 50%;
-        right: 37%;
+        top: 221px;
+        right: 388px;
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 922px) {
     .AdvantagesItem2 {
-        top: 50%;
-        right: 4%;
+        top: 181px;
+        right: 20px;
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 922px) {
     .AdvantagesItem3 {
-        bottom: -25%;
-        right: 30%;
+        bottom: 275px;
+        right: 339px;
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 922px) {
     .AdvantagesItem4 {
-        bottom: -13%;
-        right: 5%;
+        bottom: 350px;
+        right: 20px;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
     .AdvantagesItem5 {
+        display: flex;
+        justify-content: center;
         width: 100%;
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 922px) {
     .AdvantagesItem5 {
-        bottom: -46%;
-        right: 4%;
+        width: unset;
+        bottom: 142px;
+        right: 114px;
     }
 }
+
 
 
