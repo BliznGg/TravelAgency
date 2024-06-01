@@ -50,13 +50,17 @@ ul {
     margin: 0;
 }
 
+@media (min-width: 576px) {
+    .container {
+        padding: 0 25px;
+    }
+}
 
 @media (min-width: 922px) {
     .main {
         position: relative;
     }
 }
-
 
 .container {
     max-width: 1920px;
