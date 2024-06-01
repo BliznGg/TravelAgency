@@ -33,7 +33,7 @@ img {
 
 body {
     min-width: 320px;
-    font-family: "Oswald","Poppins","BebasNeue",sans-serif;
+    font-family: "Oswald","Poppins","BebasNeue", 'PoppinsLight', sans-serif;
     font-weight: 400;
 }
 
@@ -47,7 +47,6 @@ p,
 ul {
     margin: 0;
 }
-
 
 .container {
     max-width: 1920px;

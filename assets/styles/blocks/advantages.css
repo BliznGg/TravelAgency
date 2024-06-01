@@ -25,7 +25,7 @@
         position: absolute;
         padding: 0;
         width: 500px;
-        height: 296px;
+        height: 500px;
         top: 0;
         left: 420px;
         background-color: transparent;
@@ -54,7 +54,7 @@
 @media (min-width: 922px) {
     .advantages__flex {
         position: relative;
-        min-height: 296px;
+        min-height: 500px;
     }
 }
 
@@ -97,12 +97,11 @@
 @media (min-width: 922px) {
     .advantages__GirlImage {
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 296px;
+        top: -58px;
+        left: -17px;
+        height: 500px;
     }
 }
-
 
 .advantages__icon {
     width: 35px;
@@ -139,7 +138,10 @@
 @media (min-width: 922px) {
     .advantages__list {
         position: absolute;
-        width: 61%;
+        width: 100%;
+        height: 500px;
+        max-width: unset;
+        padding: 0;
     }
 }
 
@@ -171,8 +173,8 @@
 @media (min-width: 922px) {
     .advantages__item {
         position: absolute;
-        top: 0;
-        left: 0;
+        width: fit-content;
+        height: fit-content;
     }
 }
 
@@ -202,6 +204,12 @@
     line-height: normal;
 }
 
+@media (min-width: 922px) {
+    .advantages__title {
+        font-size: 11px;
+    }
+}
+
 .advantages__description {
     color: var(--Black);
     font-family: var(--font-Poppins);
@@ -212,30 +220,37 @@
 }
 
 @media (min-width: 922px) {
+    .advantages__description {
+        font-size: 15px;
+    }
+}
+
+
+@media (min-width: 922px) {
     .AdvantagesItem1 {
-        top: 142px;
-        right: 308px;
+        top: 101px;
+        left: 47px;
     }
 }
 
 @media (min-width: 922px) {
     .AdvantagesItem2 {
-        top: 181px;
-        right: 20px;
+        top: 63px;
+        left: 308px;
     }
 }
 
 @media (min-width: 922px) {
     .AdvantagesItem3 {
-        bottom: 275px;
-        right: 339px;
+        top: 272px;
+        left: 89px;
     }
 }
 
 @media (min-width: 922px) {
     .AdvantagesItem4 {
-        bottom: 350px;
-        right: 20px;
+        top: 207px;
+        left: 325px;
     }
 }
 
@@ -250,8 +265,8 @@
 @media (min-width: 922px) {
     .AdvantagesItem5 {
         width: unset;
-        bottom: 142px;
-        right: 114px;
+        bottom: 87px;
+        right: 50px;
     }
 }
 
