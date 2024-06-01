@@ -6,7 +6,7 @@ root {
 }
 
 .root {
-    --font-Oswald: 'Oswald', sans-serif;
-    --font-Poppins: 'Poppins', sans-serif;
-    --font-BebasNeue: 'BebasNeue', sans-serif;
+    --font-Oswald: "Oswald", sans-serif;
+    --font-Poppins: "Poppins", sans-serif;
+    --font-BebasNeue: "BebasNeue", sans-serif;
 }
