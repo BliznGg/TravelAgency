@@ -1,19 +1,33 @@
-@media (min-width: 320px) {
+.advantages {
+    padding: 15px 0;
+    background-color: var(--Background-color);
+}
+
+@media (min-width: 400px) {
     .advantages {
-        padding: 15px 0;
+        position: relative;
+        padding: 50px 0;
+        overflow: hidden;
         background-color: var(--Background-color);
     }
 }
 
 @media (min-width: 576px) {
     .advantages {
-        padding: 20px 0;
+        position: relative;
+        padding: 60px 0;
         background-color: var(--Background-color);
     }
 }
 
 @media (min-width: 922px) {
     .advantages {
+        position: absolute;
+        padding: 0;
+        width: 500px;
+        height: 296px;
+        top: 0;
+        left: 420px;
         background-color: transparent;
     }
 }
@@ -21,7 +35,6 @@
 @media (min-width: 400px) {
     .advantages__flex {
         display: flex;
-        position: relative;
         overflow: hidden;
     }
 }
@@ -35,13 +48,13 @@
 @media (min-width: 700px) {
     .advantages__flex {
         min-height: 373px;
-        padding-top: 60px;
     }
 }
 
 @media (min-width: 922px) {
     .advantages__flex {
-        position: unset;
+        position: relative;
+        min-height: 296px;
     }
 }
 
@@ -66,15 +79,15 @@
         object-fit: cover;
         width: auto;
         height: auto;
-        top: -77px;
-        left: 5px;
+        top: -6px;
+        left: -5px;
         max-width: 566px;
     }
 }
 
 @media (min-width: 576px) {
     .advantages__GirlImage {
-        top: -79px;
+        top: -6px;
         left: 100px;
     }
 }
@@ -88,16 +101,24 @@
 @media (min-width: 922px) {
     .advantages__GirlImage {
         position: absolute;
-        max-width: 700px;
-        top: 27px;
-        left: 286px;
+        top: 0;
+        left: 0;
+        height: 296px;
     }
 }
+
 
 @media (min-width: 320px) {
     .advantages__icon {
         width: 35px;
         height: 35px;
+    }
+}
+
+@media (min-width: 922px) {
+    .advantages__icon {
+        width: 25px;
+        height: 25px;
     }
 }
 
@@ -113,12 +134,20 @@
 
 @media (min-width: 700px) {
     .advantages__list {
+        padding-top: 50px;
         height: fit-content;
         width: 53%;
         max-width: 366px;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 25px 25px;
+    }
+}
+
+@media (min-width: 922px) {
+    .advantages__list {
+        position: absolute;
+        width: 61%;
     }
 }
 
@@ -130,6 +159,7 @@
         align-items: center;
         border-radius: 8px;
         background-color: var(--White);
+        box-shadow: 0 24px 50px 0 rgba(0, 0, 0, 0.10);
     }
 }
 
@@ -151,7 +181,8 @@
 @media (min-width: 922px) {
     .advantages__item {
         position: absolute;
-        width: unset;
+        top: 0;
+        left: 0;
     }
 }
 
@@ -163,6 +194,13 @@
         font-style: normal;
         font-weight: var(--weight-400);
         line-height: 40px;
+    }
+}
+
+@media (min-width: 922px) {
+    .advantages__ItemDescription {
+        font-size: 12px;
+        line-height: 15px;
     }
 }
 
