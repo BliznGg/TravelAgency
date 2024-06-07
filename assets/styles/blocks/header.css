@@ -48,6 +48,12 @@
     }
 }
 
+@media (min-width: 1920px) {
+    .header__logo {
+        font-size: 36px;
+    }
+}
+
 .header__link {
     justify-content: center;
 }
@@ -91,6 +97,12 @@
 @media (min-width: 922px) {
     .header__navigation {
         padding-left: 80px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .header__navigation {
+        justify-content: center;
     }
 }
 
@@ -223,6 +235,13 @@
     }
 }
 
+@media (min-width: 1920px) {
+    .header__list {
+        gap: 48px;
+
+    }
+}
+
 .header__items {
     display: flex;
     gap: 25px;
@@ -251,6 +270,12 @@
 @media (min-width: 700px) {
     .header__item {
         font-size: 15px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .header__item {
+        font-size: 18px;
     }
 }
 

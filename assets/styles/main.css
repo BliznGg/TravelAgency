@@ -33,7 +33,7 @@ img {
 
 body {
     min-width: 320px;
-    /*max-width: 922px;*/
+    max-width: 1920px;
     font-family: "Oswald","Poppins","BebasNeue", 'PoppinsLight', sans-serif;
     font-weight: 400;
 }
@@ -59,6 +59,12 @@ ul {
 @media (min-width: 576px) {
     .container {
         padding: 0 25px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        padding: 0 86px 0 160px;
     }
 }
 
@@ -94,12 +100,14 @@ ul {
 }
 
 .button__styles {
+    padding: 5px 15px;
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     cursor: pointer;
+    border-radius: 15px;
     transition: color .3s ease-out, background-color 0.3s ease-out;
 }
 
@@ -112,6 +120,14 @@ ul {
 @media (min-width: 700px) {
     .button__styles  {
         font-size: 15px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .button__styles  {
+        font-size: 18px;
+        padding: 10px 40px;
+        border-radius: 8px;
     }
 }
 
@@ -131,17 +147,9 @@ ul {
 }
 
 .sign_in {
-    padding: 5px 15px;
     background-color: var(--Orange);
     color: var(--White);
-    border-radius: 15px;
 }
-
-.sign_up {
-    padding: 5px 15px;
-    border-radius: 15px;
-}
-
 
 
 
