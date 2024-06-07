@@ -28,15 +28,15 @@
     font-style: normal;
 }
 
-/*@font-face {*/
-/*    font-family: "Poppins";*/
-/*    src: local("PoppinsRegular"),*/
-/*        url("./PoppinsRegular.woff2") format('woff2'),*/
-/*        url("./PoppinsRegular.woff") format('woff');*/
-/*    font-display: swap;*/
-/*    font-weight: 400;*/
-/*    font-style: normal;*/
-/*}*/
+@font-face {
+    font-family: "Poppins";
+    src: local("PoppinsRegular"),
+        url("./PoppinsRegular.woff2") format('woff2'),
+        url("./PoppinsRegular.woff") format('woff');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'PoppinsLight';

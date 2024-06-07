@@ -1,11 +1,11 @@
-root {
+:root {
     --weight-700: 700;
     --weight-600: 600;
     --weight-500: 500;
     --weight-400: 400;
 }
 
-.root {
+:root {
     --font-Oswald: "Oswald", sans-serif;
     --font-Poppins: "Poppins", sans-serif;
     --font-BebasNeue: "BebasNeue", sans-serif;
