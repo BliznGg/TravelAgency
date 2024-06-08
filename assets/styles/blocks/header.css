@@ -1,5 +1,5 @@
 .header {
-    min-height: 55px;
+    min-height: 57px;
     background-color: var(--Background-color);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -7,13 +7,13 @@
 
 @media (min-width: 576px) {
     .header {
-        min-width: 87px;
+        min-height: 86px;
     }
 }
 
 @media (min-width: 922px) {
     .header {
-        min-height: 86px;
+        min-height: 83px;
         background-color: transparent;
         margin-bottom: 22px;
     }
@@ -244,7 +244,6 @@
 @media (min-width: 1440px) {
     .header__list {
         gap: 48px;
-
     }
 }
 
