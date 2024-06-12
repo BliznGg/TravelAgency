@@ -2,8 +2,15 @@
     padding: 15px 0;
 }
 
+@media (min-width: 700px) {
+    .hero {
+        padding: 30px 0;
+    }
+}
+
 @media (min-width: 922px) {
     .hero {
+        padding: 15px 0;
     }
 }
 

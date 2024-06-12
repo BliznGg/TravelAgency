@@ -124,31 +124,51 @@
         <section class="form">
             <div class="container">
                 <form class="form__booking">
-                    <div class="form__wrapper form_wrapper-style">
-                        <span>
-                        Flight
-                        </span>
+                    <ul class="form__list">
+                        <li class="form__item">
+                            <div>
+                                <img class="form__icon" src="./assets/icons/form/Car.png" alt="rent car">
+                            </div>
+                            <p class="form__description">
+                                Flight
+                            </p>
+                        </li>
 
-                        <span>
-                        Hotel
-                        </span>
+                        <li class="form__item">
+                            <div>
+                                <img class="form__icon" src="./assets/icons/form/Hotel.png" alt="rent hotel">
+                            </div>
+                            <p class="form__description">
+                                Hotel
+                            </p>
+                        </li>
 
-                        <span>
-                        Rent
-                        </span>
-                    </div>
+                        <li class="form__item">
+                            <div>
+                                <img class="form__icon" src="./assets/icons/form/Plane.png" alt="ticket for plane">
+                            </div>
+                            <p class="form__description">
+                                Rent
+                            </p>
+                        </li>
+                    </ul>
 
                     <fieldset class="form__trip-info">
                         <label class="form__label" for="form__select">Destination</label>
-                        <select id="form__select" name="form__select">
-                            <option value="Paris, France">Paris, France</option>
-                            <option value="Israel,Tel-Aviv">Israel,Tel-Aviv</option>
-                            <option value="Belarus, Minsk">Belarus, Minsk</option>
-                        </select>
+                        <div class="form__select-wrapper">
+                            <img class="form__icon" src="./assets/icons/form/Location.png" alt="location">
+                            <select id="form__select" name="form__select">
+                                <option value="Paris, France">Paris, France</option>
+                                <option value="Israel,Tel-Aviv">Israel,Tel-Aviv</option>
+                                <option value="Belarus, Minsk">Belarus, Minsk</option>
+                            </select>
+                        </div>
 
                         <label class="form__label" for="form__input">Date</label>
-                        <input id="form__input" name="Departure date" type="date">
-
+                        <div class="form__input-wrapper">
+                            <img class="form__icon" src="./assets/icons/form/Calendar.png" alt="location">
+                            <input id="form__input" name="Departure date" type="date">
+                        </div>
                     </fieldset>
                     <button class="button__styles form__button">Search</button>
 
