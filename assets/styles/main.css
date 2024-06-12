@@ -49,6 +49,8 @@ ul {
     margin: 0;
 }
 
+
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -167,6 +169,16 @@ ul {
 .sign_in {
     background-color: var(--Orange);
     color: var(--White);
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.form_wrapper-style {
+    margin-bottom: 25px;
 }
 
 
