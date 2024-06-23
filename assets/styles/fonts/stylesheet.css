@@ -14,7 +14,7 @@
         url('./PoppinsBold.woff2') format('woff2'),
         url('./PoppinsBold.woff') format('woff');
     font-display: swap;
-    font-weight: 500;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -24,7 +24,7 @@
         url('./PoppinsMedium.woff2') format('woff2'),
         url('./PoppinsMedium.woff') format('woff');
     font-display: swap;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
 }
 

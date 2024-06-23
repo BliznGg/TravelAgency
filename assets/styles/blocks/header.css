@@ -97,6 +97,10 @@
     right: 0;
 }
 
+body.navigation-open {
+    overflow: hidden;
+}
+
 @media (min-width: 576px) {
     .header__navigation {
         width: 5%;

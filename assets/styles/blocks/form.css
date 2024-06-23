@@ -1,5 +1,5 @@
 .form {
-    padding: 15px 0 100px 0;
+    padding: 15px 0 15px 0;
 }
 
 @media (min-width: 700px) {
@@ -16,6 +16,10 @@
 
 .form__booking {
     width: 100%;
+    /*border: 1px solid rgba(0, 0, 0, 0.10);*/
+    border-radius: 0 0 40px 40px;
+
+    box-shadow: 0 24px 50px 0 rgba(0, 0, 0, 0.10);
 }
 
 @media (min-width: 576px) {
@@ -30,14 +34,16 @@
     }
 }
 
+@media (min-width: 1440px) {
+    .form__booking {
+        width: 40%;
+    }
+}
+
 .form__list {
     display: flex;
     flex-direction: row;
-    gap: 25px;
-    padding: 14px 14px 14px 20px;
-    border-top-right-radius: 40px;
-    border-top-left-radius: 40px;
-    box-shadow: 0 -1px 0 1px rgba(0, 0, 0, 0.10);
+
 }
 
 @media (min-width: 400px) {
@@ -50,15 +56,17 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    padding: 24px 19px;
     align-items: center;
+    background: rgba(171, 171, 171, 0.15);
 }
 
 .form__description {
-    color: var(--Orange);
+    color: #2E2E2E;
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
 }
 
@@ -84,19 +92,18 @@
 
 .form__trip-info {
     padding: 14px 20px;
-    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
     border-color: red;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.10);
 }
 
 @media (min-width: 400px) {
     .form__trip-info {
-        gap: 10px;
+        flex-direction: row;
+        gap: 35px;
         padding-bottom: 20px;
     }
 }
@@ -155,7 +162,7 @@
     justify-content: center;
     color: var(--White);
     background-color: var(--Orange);
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 10px;
 }
 

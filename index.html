@@ -109,7 +109,7 @@
 
                     <li class="advantages__item AdvantagesItem5">
                         <div class="advantages__image">
-                            <img class="advantages__icon TelephoneIconSize" src="./assets/icons/Telephone.svg" alt="Telephone">
+                            <img class="advantages__icon big" src="./assets/icons/Telephone.svg" alt="Telephone">
                         </div>
                         <div class="advantages__wrapper">
                             <p class="advantages__title">Customer Service</p>
@@ -126,27 +126,21 @@
                 <form class="form__booking">
                     <ul class="form__list">
                         <li class="form__item">
-                            <div>
-                                <img class="form__icon" src="./assets/icons/form/Car.png" alt="rent car">
-                            </div>
+                            <img class="form__icon" src="./assets/icons/form/Car.png" alt="rent car">
                             <p class="form__description">
                                 Flight
                             </p>
                         </li>
 
                         <li class="form__item">
-                            <div>
-                                <img class="form__icon" src="./assets/icons/form/Hotel.png" alt="rent hotel">
-                            </div>
+                            <img class="form__icon" src="./assets/icons/form/Hotel.png" alt="rent hotel">
                             <p class="form__description">
                                 Hotel
                             </p>
                         </li>
 
                         <li class="form__item">
-                            <div>
-                                <img class="form__icon" src="./assets/icons/form/Plane.png" alt="ticket for plane">
-                            </div>
+                            <img class="form__icon" src="./assets/icons/form/Plane.png" alt="ticket for plane">
                             <p class="form__description">
                                 Rent
                             </p>
@@ -154,23 +148,27 @@
                     </ul>
 
                     <fieldset class="form__trip-info">
-                        <label class="form__label" for="form__select">Destination</label>
-                        <div class="form__select-wrapper">
-                            <img class="form__icon" src="./assets/icons/form/Location.png" alt="location">
-                            <select id="form__select" name="form__select">
-                                <option value="Paris, France">Paris, France</option>
-                                <option value="Israel,Tel-Aviv">Israel,Tel-Aviv</option>
-                                <option value="Belarus, Minsk">Belarus, Minsk</option>
-                            </select>
+                        <div class="form__wrapper">
+                            <label class="form__label" for="form__select">Destination</label>
+                            <div class="form__select-wrapper">
+                                <img class="form__icon" src="./assets/icons/form/Location.png" alt="location">
+                                <select id="form__select" name="form__select">
+                                    <option value="Paris, France">Paris, France</option>
+                                    <option value="Israel,Tel-Aviv">Israel,Tel-Aviv</option>
+                                    <option value="Belarus, Minsk">Belarus, Minsk</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__wrapper">
+                            <label class="form__label" for="form__input">Date</label>
+                            <div class="form__input-wrapper">
+                                <img class="form__icon" src="./assets/icons/form/Calendar.png" alt="location">
+                                <input id="form__input" name="Departure date" type="date">
+                            </div>
                         </div>
 
-                        <label class="form__label" for="form__input">Date</label>
-                        <div class="form__input-wrapper">
-                            <img class="form__icon" src="./assets/icons/form/Calendar.png" alt="location">
-                            <input id="form__input" name="Departure date" type="date">
-                        </div>
+                        <button class="button__styles form__button">Search</button>
                     </fieldset>
-                    <button class="button__styles form__button">Search</button>
 
                 </form>
             </div>
