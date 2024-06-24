@@ -11,44 +11,39 @@
 @media (min-width: 922px) {
     .form {
         padding: 15px 0;
+        max-width: 530px;
     }
 }
 
+@media (min-width: 1440px) {
+    .form {
+        padding: 15px 0;
+        max-width: 910px;
+    }
+}
+
+
 .form__booking {
     width: 100%;
-    /*border: 1px solid rgba(0, 0, 0, 0.10);*/
     border-radius: 0 0 40px 40px;
-
     box-shadow: 0 24px 50px 0 rgba(0, 0, 0, 0.10);
 }
 
 @media (min-width: 576px) {
     .form__booking {
-        width: 70%;
-    }
-}
-
-@media (min-width: 700px) {
-    .form__booking {
-        width: 55%;
-    }
-}
-
-@media (min-width: 1440px) {
-    .form__booking {
-        width: 40%;
+        width: 100%;
     }
 }
 
 .form__list {
+    width: 100%;
     display: flex;
     flex-direction: row;
-
 }
 
 @media (min-width: 400px) {
     .form__list {
-        padding: 20px 14px 20px 20px;
+        width: max-content;
     }
 }
 
@@ -61,6 +56,12 @@
     background: rgba(171, 171, 171, 0.15);
 }
 
+@media (min-width: 1440px) {
+    .form__item {
+        padding: 24px 24px;
+    }
+}
+
 .form__description {
     color: #2E2E2E;
     font-family: var(--font-Poppins);
@@ -70,15 +71,29 @@
     line-height: normal;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 922px) {
     .form__description {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
+
+@media (min-width: 1440px) {
+    .form__description {
+        font-size: 18px;
+    }
+}
+
 
 .form__icon {
     width: 20px;
     height: 20px;
+}
+
+@media (min-width: 1440px) {
+    .form__icon {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .form__label {
@@ -90,10 +105,17 @@
     line-height: normal;
 }
 
+@media (min-width: 1440px) {
+    .form__label {
+        font-size: 18px;
+    }
+}
+
 .form__trip-info {
-    padding: 14px 20px;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 15px;
     border-color: red;
     border-bottom-left-radius: 40px;
@@ -103,8 +125,20 @@
 @media (min-width: 400px) {
     .form__trip-info {
         flex-direction: row;
-        gap: 35px;
+        gap: 25px;
         padding-bottom: 20px;
+    }
+}
+
+@media (min-width: 576px) {
+    .form__trip-info {
+        padding-right: 10%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .form__trip-info {
+        padding: 32px 64px;
     }
 }
 
@@ -119,9 +153,31 @@
     cursor: pointer;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 1440px) {
     #form__select {
-        font-size: 14px;
+        font-size: 18px;
+    }
+
+
+.form__data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .form__data {
+        width: max-content;
+        flex: 1;
+    }
+}
+
+@media (min-width: 1440px) {
+    .form__data {
+        gap: 20px;
+        justify-content: flex-start;
+    }
     }
 }
 
@@ -143,11 +199,13 @@
     cursor: pointer;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 1440px) {
     #form__input {
-        font-size: 14px;
+        font-size: 18px;
     }
 }
+
+
 
 .form__input-wrapper {
     display: flex;
@@ -169,7 +227,7 @@
 @media (min-width: 576px) {
     .form__button {
         width: unset;
-        align-self: flex-start;
+        align-self: center;
     }
 }
 
@@ -178,6 +236,21 @@
         padding: 8px 30px;
     }
 }
+
+@media (min-width: 922px) {
+    .form__button {
+        padding: 8px 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .form__button {
+        padding: 19px 48px;
+        font-size: 18px;
+        border-radius: 16px;
+    }
+}
+
 
 
 
