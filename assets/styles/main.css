@@ -82,12 +82,6 @@ ul {
     }
 }
 
-@media (min-width: 922px) {
-    .main {
-        position: relative;
-    }
-}
-
 @media (min-width: 1440px) {
     .main {
         position: unset;
