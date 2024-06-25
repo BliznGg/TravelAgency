@@ -13,7 +13,7 @@
 
 @media (min-width: 922px) {
     .header {
-        min-height: 83px;
+        min-height: 89px;
         background-color: transparent;
         margin-bottom: 22px;
     }
@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     font-family: var(--font-Oswald);
-    font-size: 14px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -51,6 +51,12 @@
 @media (min-width: 700px) {
     .header__logo {
         font-size: 20px;
+    }
+}
+
+@media (min-width: 922px) {
+    .header__logo {
+        font-size: 26px;
     }
 }
 
@@ -162,7 +168,7 @@ body.navigation-open {
 
 @media (min-width: 400px) {
     .header__buttons {
-        padding-left: 100px;
+        padding-left: 75px;
     }
 }
 

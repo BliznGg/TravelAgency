@@ -122,7 +122,7 @@ ul {
 .button__styles {
     padding: 5px 15px;
     font-family: var(--font-Poppins);
-    font-size: 11px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -140,6 +140,12 @@ ul {
 @media (min-width: 700px) {
     .button__styles  {
         font-size: 15px;
+    }
+}
+
+@media (min-width: 922px) {
+    .button__styles  {
+        font-size: 16px;
     }
 }
 

@@ -11,7 +11,7 @@
 @media (min-width: 922px) {
     .form {
         padding: 15px 0;
-        max-width: 530px;
+        max-width: 690px;
     }
 }
 
@@ -26,12 +26,11 @@
 .form__booking {
     width: 100%;
     border-radius: 0 0 40px 40px;
-
 }
 
 @media (min-width: 576px) {
     .form__booking {
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -71,9 +70,15 @@
     line-height: normal;
 }
 
-@media (min-width: 922px) {
+@media (min-width: 700px) {
     .form__description {
         font-size: 14px;
+    }
+}
+
+@media (min-width: 922px) {
+    .form__description {
+        font-size: 16px;
     }
 }
 
@@ -89,10 +94,25 @@
     height: 20px;
 }
 
+@media (min-width: 922px) {
+    .form__icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
 @media (min-width: 1440px) {
     .form__icon {
         width: 24px;
         height: 24px;
+    }
+}
+
+@media (min-width: 700px) {
+    .form__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 }
 
@@ -103,6 +123,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+@media (min-width: 700px) {
+    .form__label {
+        font-size: 14px;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -132,6 +158,7 @@
 @media (min-width: 576px) {
     .form__trip-info {
         padding-right: 10%;
+        border-radius: 0 40px 40px 40px;
     }
 }
 
@@ -168,6 +195,8 @@
 
 @media (min-width: 576px) {
     .form__data {
+        flex-direction: row;
+        justify-content: space-around;
         width: max-content;
         flex: 1;
     }
@@ -203,8 +232,6 @@
         font-size: 18px;
     }
 }
-
-
 
 .form__input-wrapper {
     display: flex;

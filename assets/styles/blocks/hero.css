@@ -50,8 +50,8 @@
 
 @media (min-width: 922px) {
     .hero__title {
-        font-size: 72px;
-        line-height: 80px;
+        font-size: 80px;
+        line-height: 90px;
     }
 }
 
@@ -97,7 +97,7 @@
 @media (min-width: 922px) {
     .hero__subtitle {
         max-width: 400px;
-        font-size: 14px;
+        font-size: 16px;
         line-height: normal;
     }
 }
