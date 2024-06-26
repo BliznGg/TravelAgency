@@ -11,7 +11,7 @@
 @media (min-width: 922px) {
     .form {
         padding: 15px 0;
-        max-width: 690px;
+        max-width: 566px;
     }
 }
 
@@ -26,12 +26,6 @@
 .form__booking {
     width: 100%;
     border-radius: 0 0 40px 40px;
-}
-
-@media (min-width: 576px) {
-    .form__booking {
-        width: 80%;
-    }
 }
 
 .form__list {
@@ -271,7 +265,7 @@
 
 @media (min-width: 1440px) {
     .form__button {
-        padding: 19px 48px;
+        padding: 15px 35px;
         font-size: 18px;
         border-radius: 16px;
     }
