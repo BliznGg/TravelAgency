@@ -25,14 +25,24 @@
 
 .form__booking {
     width: 100%;
-    border-radius: 0 0 40px 40px;
+}
+
+@media (min-width: 700px) {
+    .form__booking {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .form__booking {
+        max-width: 922px;
+    }
 }
 
 .form__list {
     width: 100%;
     display: flex;
     flex-direction: row;
-    border-radius: 40px 0 0 0;
 }
 
 @media (min-width: 400px) {
@@ -45,18 +55,16 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-    padding: 24px 19px;
     align-items: center;
     background: rgba(171, 171, 171, 0.15);
 }
 
-@media (min-width: 1440px) {
-    .form__item {
-        padding: 24px 24px;
-    }
+.form__item:first-child {
+    border-radius: 40px 0 0 0;
 }
 
 .form__description {
+    padding: 20px 18px;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -83,9 +91,9 @@
 @media (min-width: 1440px) {
     .form__description {
         font-size: 18px;
+        padding: 30px 30px;
     }
 }
-
 
 .form__icon {
     width: 20px;
