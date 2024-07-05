@@ -1,6 +1,6 @@
 .advantages {
     padding: 15px 0;
-    background-color: var(--Background-color);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.10);
 }
 
 @media (min-width: 400px) {
@@ -8,7 +8,7 @@
         position: relative;
         padding: 50px 0;
         overflow: hidden;
-        background-color: var(--Background-color);
+        box-shadow: unset;
     }
 }
 
@@ -16,7 +16,12 @@
     .advantages {
         position: relative;
         padding: 60px 0;
-        background-color: var(--Background-color);
+    }
+}
+
+@media (min-width: 700px) {
+    .advantages {
+        box-shadow: unset;
     }
 }
 
@@ -30,6 +35,7 @@
         right: 3%;
         background-color: transparent;
         overflow: unset;
+        box-shadow: unset;
     }
 }
 
