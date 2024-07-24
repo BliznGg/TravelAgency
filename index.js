@@ -22,26 +22,41 @@
 // 3) на каждой этерации вызываем addEventListener у ноды кнопки
 // 4) при клике на кнопку делаем console.log() числа этерации конкретной кнопки.
 
-
+// Есть 3 варианта событий переключения кнопки:
+// 1) когда все кнопки не активны - нажимаем на любую кнопку и та кнопка становится активной
+// 2) когда кнопка 1 активна - мы нажимаем на кнопку 2 и 1 кнопка становится не актвиной, а а кнопка 2 активной
+// 3) когда 1 кнопка активна и мы на неё же нажимаем мы получаем все кнопки не активны
 
 const formButtonsNodeList = document.querySelectorAll('.form__description');
 
-formButtonsNodeList.forEach((index,item )=> {
-    console.log(index)
-    index.addEventListener("click", ()=> {
-        formButtonsNodeList.forEach(item => {
-            item.classList.remove('active');
-            item.classList.add('deactive');
-            // console.log('кнопка выключена'); - если вставить тут то в консоли не работает
-        })
-        console.log('кнопка выключена');
-
-        index.classList.remove('deactive');
-        index.classList.add('active');
-        console.log('кнопка нажата');
-        console.log(item)
-    });
+formButtonsNodeList.forEach((item,index )=> {
+    // console.log(index)
+    // index.addEventListener("click", ()=> {
+    //     formButtonsNodeList.forEach(item => {
+    //         item.classList.remove('active');
+    //         item.classList.add('deactive');
+    //         // console.log('кнопка выключена'); - если вставить тут то в консоли не работает
+    //     })
+    //     console.log('кнопка выключена');
+    //
+    //     index.classList.remove('deactive');
+    //     index.classList.add('active');
+    //     console.log('кнопка нажата');
+    //     console.log(item)
+    // });
+    console.log(item, index)
+    item.addEventListener('click', (event) => {
+        // event это объект который содержит информацию о произошедшем клике на элемент
+        event.preventDefault()
+        const buttonNode = event.target // event.target это Node на которую произошло событие
+        const isButtonActive = buttonNode.classList.contains('active'); // явялется ли кнопкой активной кнопка на которую кликнули
+        if(isButtonActive) {
+            buttonNode.classList.remove('active');
+        }
+    })
 })
+
+
 
 
 
