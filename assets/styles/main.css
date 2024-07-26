@@ -117,11 +117,6 @@ ul {
  color: orange;
 }
 
-.deactive {
-    background-color: gray;
-    color: red;
-}
-
 .button__styles {
     padding: 5px 15px;
     font-family: var(--font-Poppins);
