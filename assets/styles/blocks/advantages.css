@@ -36,6 +36,7 @@
         background-color: transparent;
         overflow: unset;
         box-shadow: unset;
+        z-index: -1;
     }
 }
 
