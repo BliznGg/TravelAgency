@@ -1,3 +1,4 @@
+// Burger
 const burger = document.querySelector('.header__label')
 
 const navigation = document.querySelector('.header__navigation')
@@ -8,25 +9,7 @@ function myFunction() {
     document.body.classList.toggle('navigation-open')
 }
 
-
-// Задача.
-// 1) При клике на кнопку делать кнопку активную.
-// т.е. При клике на кнопку изменить стили снопки.
-// 1.1) значит, надо найти через DOM ноду кнопки
-// затем, добавить класс, по которому будет меняться бэкграунд кнопки
-// тем временем, сделать так что бы при клике не срабатывало два состояния кнопки.
-// т.е. при клике
-
-// 1) получить список кнопок через метод querySelectorAll - читать документацию как работает
-// 2) при помощи цикла перебрать полученные кнопки
-// 3) на каждой этерации вызываем addEventListener у ноды кнопки
-// 4) при клике на кнопку делаем console.log() числа этерации конкретной кнопки.
-
-// Есть 3 варианта событий переключения кнопки:
-// 1) когда все кнопки не активны - нажимаем на любую кнопку и та кнопка становится активной
-// 2) когда кнопка 1 активна - мы нажимаем на кнопку 2 и 1 кнопка становится не актвиной, а  кнопка 2 активной
-// 3) когда 1 кнопка активна и мы на неё же нажимаем мы получаем все кнопки не активны
-
+// form buttons style
 const formButtonsNodeList = document.querySelectorAll('.form__description');
 
 formButtonsNodeList.forEach((item,index )=> {
@@ -44,14 +27,73 @@ formButtonsNodeList.forEach((item,index )=> {
             })
             buttonNode.classList.add('active');
         }
-        console.log(event)
     })
 })
 
+// select
+
 // 1) реализовать селект с выбором destination. который будет копировать полную логику тега select
+// 1.1) список открывается и сразу сделать проверку, где должны быть все элементы из списка кроме выбранного
+// 1.2) после того как была выбрана страна, она должна переместиться на первую строку
+// 1.2.1) перебирать и выводить тот список оставшихся стран кроме той, которая уже стоит первой
 // 2) стилизовать input date
+
+
 // 3) По умолчанию при выборе flight\hotel\rent установить занчение по умолчанию - например, дата по умочланию - определеннею, стоковую
 // 4) Необходимо сохранять состояние введенных данных destination и date даже при переключении на другие вкладки формы
+
+
+const select = document.querySelector('.form__wrapper')
+const selectList = document.querySelector('.form__SelectList')
+const allSelectItems = document.querySelectorAll('.form__SelectItems')
+
+// select.addEventListener('click',toggleSelect);
+// function toggleSelect() {
+//     selectList.classList.toggle('select-open')
+//     debugger
+// }
+
+function initSelect(node, list, activeItem,label, icon) {
+    // node - тег полученный через js куда будет создан наш селект
+    // initSelect создание селекта по аргументам функции
+    // list - массив всех элементов которые могут быть в селекте
+    // activeItem - активный текущий элемент селекта
+    // label - лейбл селекта
+    // icon  - иконка селекта
+
+    allSelectItems.forEach((item, index)=>{
+        console.log(item, index)
+        item.addEventListener('click', (event)=>{
+        })
+    } )
+    node.classList.add('form__wrapper')
+}
+
+// дз
+// 1) создать структуру внутри html. СО ВСЕМИ стилями и атрибутами
+// 2) итоговую ноду которую я получу вставить внутрь node
+
+function createDestinationSelect() {
+    const node = document.querySelector('#destination-select')
+    const countries = ['Paris, France', 'Israel, Tel-Aviv', 'Belarus, Minsk']
+    const defaultCountry = 'Paris, France'
+    const label = 'Destination'
+    const icon = "./assets/icons/form/Location.png"
+    initSelect(node, countries, defaultCountry, label, icon)
+}
+createDestinationSelect()
+
+// в функции:
+// 1) получить список опций без дефолтного значения ..- filter
+// 2) создать структуру селекта в jS через creat element - читать
+
+const selectDefault = countries.filter(item => item !== defaultCountry)
+console.log(selectDefault)  //тут я получил дефолтное значение из массива
+
+
+
+
+
 
 
 
