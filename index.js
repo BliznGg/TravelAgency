@@ -37,8 +37,6 @@ formButtonsNodeList.forEach((item,index )=> {
 // 1.2) после того как была выбрана страна, она должна переместиться на первую строку
 // 1.2.1) перебирать и выводить тот список оставшихся стран кроме той, которая уже стоит первой
 // 2) стилизовать input date
-
-
 // 3) По умолчанию при выборе flight\hotel\rent установить занчение по умолчанию - например, дата по умочланию - определеннею, стоковую
 // 4) Необходимо сохранять состояние введенных данных destination и date даже при переключении на другие вкладки формы
 
@@ -66,12 +64,32 @@ function initSelect(node, list, activeItem,label, icon) {
         item.addEventListener('click', (event)=>{
         })
     } )
-    node.classList.add('form__wrapper')
+
+    const formLabel = document.createElement('div')
+    formLabel.classList.add('form__label')
+    formLabel.innerHTML = 'Destination'
+
+    const formSelectWrapper = document.createElement('div')
+    formSelectWrapper.classList.add('form__select-wrapper"')
+
+    const formIcon = document.createElement("img")
+    formIcon.classList.add('form__icon')
+
+    node.classList.add('form__wrapper');
+    node.after(formLabel);
+    formLabel.after(formSelectWrapper)
+    formSelectWrapper.prepend(formIcon)
+
+
 }
 
 // дз
 // 1) создать структуру внутри html. СО ВСЕМИ стилями и атрибутами
 // 2) итоговую ноду которую я получу вставить внутрь node
+//     методы узнать:
+//     как добавлять классы
+//     как добавлять атрибуты со значениями
+//     метод, который добавляет ноду в другую ноду
 
 function createDestinationSelect() {
     const node = document.querySelector('#destination-select')
