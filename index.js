@@ -45,11 +45,10 @@ const select = document.querySelector('.form__wrapper')
 const selectList = document.querySelector('.form__SelectList')
 const allSelectItems = document.querySelectorAll('.form__SelectItems')
 
-// select.addEventListener('click',toggleSelect);
-// function toggleSelect() {
-//     selectList.classList.toggle('select-open')
-//     debugger
-// }
+select.addEventListener('click',toggleSelect);
+function toggleSelect() {
+    selectList.classList.toggle('select-open')
+}
 
 function initSelect(node, list, activeItem,label, icon) {
     // node - тег полученный через js куда будет создан наш селект
@@ -65,31 +64,30 @@ function initSelect(node, list, activeItem,label, icon) {
         })
     } )
 
-    const formLabel = document.createElement('div')
-    formLabel.classList.add('form__label')
-    formLabel.innerHTML = 'Destination'
+    const select = document.createElement('div')
+    select.classList.add('select')
 
-    const formSelectWrapper = document.createElement('div')
-    formSelectWrapper.classList.add('form__select-wrapper"')
+    const selectLabel = document.createElement('div')
+    selectLabel.classList.add('select__label')
+    selectLabel.textContent = label
+    select.append(selectLabel)
 
-    const formIcon = document.createElement("img")
-    formIcon.classList.add('form__icon')
+    const selectWrapper = document.createElement('div')
+    selectWrapper.classList.add('select__wrapper');
+    select.append(selectWrapper)
 
-    node.classList.add('form__wrapper');
-    node.after(formLabel);
-    formLabel.after(formSelectWrapper)
-    formSelectWrapper.prepend(formIcon)
+    const selectIcon = document.createElement("img")
+    selectIcon.classList.add('form__icon')
+    selectIcon.src=icon
+    selectWrapper.append(selectIcon)
 
+    const defaultCountry = document.createElement('div')
+    defaultCountry.classList.add('form__countries')
+    defaultCountry.textContent=activeItem
+    selectWrapper.append(defaultCountry)
 
+    node.append(select)
 }
-
-// дз
-// 1) создать структуру внутри html. СО ВСЕМИ стилями и атрибутами
-// 2) итоговую ноду которую я получу вставить внутрь node
-//     методы узнать:
-//     как добавлять классы
-//     как добавлять атрибуты со значениями
-//     метод, который добавляет ноду в другую ноду
 
 function createDestinationSelect() {
     const node = document.querySelector('#destination-select')
@@ -101,12 +99,8 @@ function createDestinationSelect() {
 }
 createDestinationSelect()
 
-// в функции:
-// 1) получить список опций без дефолтного значения ..- filter
-// 2) создать структуру селекта в jS через creat element - читать
-
 const selectDefault = countries.filter(item => item !== defaultCountry)
-console.log(selectDefault)  //тут я получил дефолтное значение из массива
+console.log(selectDefault)
 
 
 
