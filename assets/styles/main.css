@@ -185,7 +185,32 @@ fieldset {
     margin-bottom: 25px;
 }
 
+/*.select {*/
+/*    */
+/*}*/
 
+/*.select__label {*/
+/*    color: var(--Gray);*/
+/*    font-family: var(--font-Poppins);*/
+/*    font-size: 18px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: normal;*/
+/*}*/
+
+/*.select__wrapper {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+
+/*.select__countries {*/
+/*    color: var(--Black);*/
+/*    font-family: var(--font-Poppins);*/
+/*    font-size: 18px;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    line-height: normal;*/
+/*}*/
 
 
 

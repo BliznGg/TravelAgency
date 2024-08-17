@@ -1,3 +1,6 @@
+// import initSelect from '/base-select'
+import {a} from '/base-select.js'
+console.log('initselect', a)
 // Burger
 const burger = document.querySelector('.header__label')
 
@@ -12,17 +15,17 @@ function myFunction() {
 // form buttons style
 const formButtonsNodeList = document.querySelectorAll('.form__description');
 
-formButtonsNodeList.forEach((item,index )=> {
+formButtonsNodeList.forEach((item, index) => {
     console.log(item, index)
     item.addEventListener('click', (event) => {
         // event это объект который содержит информацию о произошедшем клике на элемент
         event.preventDefault()
         const buttonNode = event.currentTarget // event.target это Node на которую произошло событие
         const isButtonActive = buttonNode.classList.contains('active'); // явялется ли кнопкой активной кнопка на которую кликнули
-        if(isButtonActive) {
+        if (isButtonActive) {
             buttonNode.classList.remove('active');
         } else {
-            formButtonsNodeList.forEach((item)=>{
+            formButtonsNodeList.forEach((item) => {
                 item.classList.remove('active');
             })
             buttonNode.classList.add('active');
@@ -45,58 +48,23 @@ const select = document.querySelector('.form__wrapper')
 const selectList = document.querySelector('.form__SelectList')
 const allSelectItems = document.querySelectorAll('.form__SelectItems')
 
-select.addEventListener('click',toggleSelect);
+select.addEventListener('click', toggleSelect);
+
 function toggleSelect() {
     selectList.classList.toggle('select-open')
 }
 
-function initSelect(node, list, activeItem,label, icon) {
-    // node - тег полученный через js куда будет создан наш селект
-    // initSelect создание селекта по аргументам функции
-    // list - массив всех элементов которые могут быть в селекте
-    // activeItem - активный текущий элемент селекта
-    // label - лейбл селекта
-    // icon  - иконка селекта
-
-    allSelectItems.forEach((item, index)=>{
-        console.log(item, index)
-        item.addEventListener('click', (event)=>{
-        })
-    } )
-
-    const select = document.createElement('div')
-    select.classList.add('select')
-
-    const selectLabel = document.createElement('div')
-    selectLabel.classList.add('select__label')
-    selectLabel.textContent = label
-    select.append(selectLabel)
-
-    const selectWrapper = document.createElement('div')
-    selectWrapper.classList.add('select__wrapper');
-    select.append(selectWrapper)
-
-    const selectIcon = document.createElement("img")
-    selectIcon.classList.add('form__icon')
-    selectIcon.src=icon
-    selectWrapper.append(selectIcon)
-
-    const defaultCountry = document.createElement('div')
-    defaultCountry.classList.add('form__countries')
-    defaultCountry.textContent=activeItem
-    selectWrapper.append(defaultCountry)
-
-    node.append(select)
-}
-
 function createDestinationSelect() {
+    console.log('createDestinationSelect start')
     const node = document.querySelector('#destination-select')
     const countries = ['Paris, France', 'Israel, Tel-Aviv', 'Belarus, Minsk']
     const defaultCountry = 'Paris, France'
     const label = 'Destination'
     const icon = "./assets/icons/form/Location.png"
     initSelect(node, countries, defaultCountry, label, icon)
+    console.log('createDestinationSelect END')
 }
+
 createDestinationSelect()
 
 const selectDefault = countries.filter(item => item !== defaultCountry)

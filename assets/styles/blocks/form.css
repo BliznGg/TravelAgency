@@ -202,16 +202,6 @@
 
 }
 
-
-
-.form__SelectList {
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    width: max-content;
-    top: -8px;
-}
-
 .select-open {
     display: block;
 }
