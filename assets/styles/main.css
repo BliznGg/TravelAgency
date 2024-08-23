@@ -185,32 +185,121 @@ fieldset {
     margin-bottom: 25px;
 }
 
-/*.select {*/
-/*    */
-/*}*/
+.select {
 
-/*.select__label {*/
-/*    color: var(--Gray);*/
-/*    font-family: var(--font-Poppins);*/
-/*    font-size: 18px;*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    line-height: normal;*/
-/*}*/
+}
 
-/*.select__wrapper {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*}*/
+.select__label {
+    color: var(--Gray);
+    font-family: var(--font-Poppins);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
-/*.select__countries {*/
-/*    color: var(--Black);*/
-/*    font-family: var(--font-Poppins);*/
-/*    font-size: 18px;*/
-/*    font-style: normal;*/
-/*    font-weight: 700;*/
-/*    line-height: normal;*/
-/*}*/
+@media (min-width: 400px) {
+    .select__label {
+        font-size: 16px;
+    }
+}
+
+.select__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.select__countries {
+    color: var(--Black);
+    font-family: var(--font-Poppins);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media (min-width: 700px) {
+    .select__countries {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 922px) {
+    .select__countries {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .select__countries {
+        font-size: 18px;
+    }
+}
+
+.input {
+
+}
+
+.input__label {
+    color: var(--Gray);
+    font-family: var(--font-Poppins);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media (min-width: 400px) {
+    .input__label {
+        font-size: 16px;
+    }
+}
+
+.input__icon {
+
+}
+
+.input__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.input__icon {
+
+}
+
+.input__day {
+    color: var(--Black);
+    font-family: var(--font-Poppins);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media (min-width: 700px) {
+    .input__day {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 922px) {
+    .input__day {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .input__day {
+        font-size: 18px;
+    }
+}
+
 
 
 
