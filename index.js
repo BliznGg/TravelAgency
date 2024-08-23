@@ -63,6 +63,17 @@ function initSelect(node, list, activeItem,label, icon) {
     selectWrapper.classList.add('select__wrapper');
     select.append(selectWrapper)
 
+    const selectList = document.createElement('ul')
+    selectList.classList.add('select__list')
+    select.append(selectList)
+    list.forEach(item => {
+        const selectItem= document.createElement('li')
+        selectItem.textContent = list
+        selectList.append(selectItem)
+
+    })
+
+
     const selectIcon = document.createElement("img")
     selectIcon.classList.add('select__icon')
     selectIcon.src=icon
@@ -70,7 +81,7 @@ function initSelect(node, list, activeItem,label, icon) {
 
     const defaultCountry = document.createElement('div')
     defaultCountry.classList.add('select__countries')
-    defaultCountry.textContent=activeItem
+    defaultCountry.textContent = activeItem
     selectWrapper.append(defaultCountry)
 
     node.append(select)
@@ -86,45 +97,19 @@ function createDestinationSelect() {
 }
 createDestinationSelect()
 
-function initInput(node, list, activeItem, label, icon) {
-
-    const input = document.createElement('div')
-    input.classList.add('input')
-
-    const inputLabel = document.createElement('div')
-    inputLabel.classList.add('input__label')
-    inputLabel.textContent = label
-    input.append(inputLabel)
-
-    const inputWrapper = document.createElement('div')
-    inputWrapper.classList.add('input__wrapper');
-    input.append(inputWrapper)
-
-    const inputIcon = document.createElement("img")
-    inputIcon.classList.add('input__icon')
-    inputIcon.src=icon
-    inputWrapper.append(inputIcon)
-
-    const defaultDay = document.createElement('div')
-    defaultDay.classList.add('input__day')
-    defaultDay.textContent=activeItem
-    inputWrapper.append(defaultDay)
-
-    node.append(input)
-}
-
-function createDataInput() {
+function createDateSelect() {
     const node = document.querySelector('#date-select')
     const days = ['1 Августа 2024','2 Августа 2024','3 Августа 2024','4 Августа 2024','5 Августа 2024','6 Августа 2024','7 Августа 2024','8 Августа 2024','9 Августа 2024']
     const defaultDay = '1 Августа 2024'
     const label = 'Date'
     const icon = "./assets/icons/form/Calendar.png"
-    initInput(node, days, defaultDay, label, icon)
+    initSelect(node, days, defaultDay, label, icon)
 }
-createDataInput()
+createDateSelect()
 
 
-
+//исправтть пнг на свг картинки
+    // удалить лишние классы инпута
 
 
 
