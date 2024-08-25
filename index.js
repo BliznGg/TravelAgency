@@ -30,8 +30,6 @@ formButtonsNodeList.forEach((item, index) => {
     })
 })
 
-
-
 // select
 
 // 1) реализовать селект с выбором destination. который будет копировать полную логику тега select
@@ -70,9 +68,7 @@ function initSelect(node, list, activeItem,label, icon) {
         const selectItem= document.createElement('li')
         selectItem.textContent = list
         selectList.append(selectItem)
-
     })
-
 
     const selectIcon = document.createElement("img")
     selectIcon.classList.add('select__icon')
@@ -92,24 +88,32 @@ function createDestinationSelect() {
     const countries = ['Paris, France', 'Israel, Tel-Aviv', 'Belarus, Minsk']
     const defaultCountry = 'Paris, France'
     const label = 'Destination'
-    const icon = "./assets/icons/form/Location.png"
+    const icon = "./assets/icons/form/Vector.svg"
     initSelect(node, countries, defaultCountry, label, icon)
 }
 createDestinationSelect()
 
 function createDateSelect() {
     const node = document.querySelector('#date-select')
+
     const days = ['1 Августа 2024','2 Августа 2024','3 Августа 2024','4 Августа 2024','5 Августа 2024','6 Августа 2024','7 Августа 2024','8 Августа 2024','9 Августа 2024']
+
+    // const date = new Date();
+    // const year = date.getFullYear();
+    // const month = String(date.getMonth() + 1).padStart(2, '0');
+    // const day = String(date.getDate()).padStart(2, '0');
+    // const days = `${year}-${month}-${day}`;
+
     const defaultDay = '1 Августа 2024'
     const label = 'Date'
-    const icon = "./assets/icons/form/Calendar.png"
+    const icon = "./assets/icons/form/Calendar.svg"
     initSelect(node, days, defaultDay, label, icon)
 }
 createDateSelect()
 
 
-//исправтть пнг на свг картинки
-    // удалить лишние классы инпута
+//исправтть пнг на свг иконки
+// удалить лишние классы инпута main
 
 
 
