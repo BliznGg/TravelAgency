@@ -315,6 +315,16 @@
     }
 }
 
+.select-active {
+    background-color: red;
+}
+
+.select-active.select__list {
+    background-color: orange;
+}
+
+
+
 
 
 

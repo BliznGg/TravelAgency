@@ -13,7 +13,6 @@ function myFunction() {
 const formButtonsNodeList = document.querySelectorAll('.form__description');
 
 formButtonsNodeList.forEach((item, index) => {
-    console.log(item, index)
     item.addEventListener('click', (event) => {
         // event это объект который содержит информацию о произошедшем клике на элемент
         event.preventDefault()
@@ -64,9 +63,10 @@ function initSelect(node, list, activeItem,label, icon) {
     const selectList = document.createElement('ul')
     selectList.classList.add('select__list')
     select.append(selectList)
+
     list.forEach(item => {
         const selectItem= document.createElement('li')
-        selectItem.textContent = list
+        selectItem.textContent = list.shift()
         selectList.append(selectItem)
     })
 
@@ -108,20 +108,34 @@ function createDateSelect() {
     const label = 'Date'
     const icon = "./assets/icons/form/Calendar.svg"
     initSelect(node, days, defaultDay, label, icon)
+
 }
 createDateSelect()
 
+// открытие и закрытие селекта
 
-//исправтть пнг на свг иконки
-// удалить лишние классы инпута main
+const selectItems = document.querySelectorAll('.select');
+const selectList = document.querySelectorAll('.select__list');
+
+selectList.forEach((item) => {
+    item.addEventListener('click', (event) =>{
+        const selectNode = event.currentTarget
+        const isSelectActive = selectNode.classList.contains('select-active');
+        if (isSelectActive) {
+            selectNode.classList.remove('select-active');
+        } else {
+            selectList.forEach((item) => {
+                item.classList.remove('select-active')
+            })
+            selectNode.classList.add('select-active')
+        }
+    })
+})
 
 
 
-// select.addEventListener('click', toggleSelect);
 
-// function toggleSelect() {
-//     selectList.classList.toggle('select-open')
-// }
+
 
 
 
