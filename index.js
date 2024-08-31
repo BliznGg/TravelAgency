@@ -48,8 +48,18 @@ function initSelect(node, list, activeItem,label, icon) {
     // label - лейбл селекта
     // icon  - иконка селекта
 
+
     const select = document.createElement('div')
     select.classList.add('select')
+    select.addEventListener('click', () => {
+        select.classList.toggle('select-open');
+       // реадизовать логику показа и скрытия по клику на селект
+
+       // реализовать установку списка без активного селекта (без дефолтного элемента)
+       // при клике на элемент списка закрывать список + устанавлиать на верх этот элемент на который был клик
+    })
+
+    // почитать про всплытие и погружение
 
     const selectLabel = document.createElement('div')
     selectLabel.classList.add('select__label')
@@ -64,15 +74,23 @@ function initSelect(node, list, activeItem,label, icon) {
     selectList.classList.add('select__list')
     select.append(selectList)
 
-    list.forEach(item => {
-        const selectItem= document.createElement('li')
-        selectItem.textContent = list.shift()
-        selectList.append(selectItem)
+    list.forEach((item, index) => {
+        const isAlreadyInList = item === activeItem
+        if(!isAlreadyInList) {
+            const selectItem= document.createElement('li')
+            selectItem.id = String(index)
+            selectItem.textContent = item
+            selectList.append(selectItem)
+
+            selectItem.addEventListener('click', (event) =>{
+                console.log(selectItem.id)
+            })
+        }
     })
 
     const selectIcon = document.createElement("img")
     selectIcon.classList.add('select__icon')
-    selectIcon.src=icon
+    selectIcon.src = icon
     selectWrapper.append(selectIcon)
 
     const defaultCountry = document.createElement('div')
@@ -85,18 +103,21 @@ function initSelect(node, list, activeItem,label, icon) {
 
 function createDestinationSelect() {
     const node = document.querySelector('#destination-select')
+
     const countries = ['Paris, France', 'Israel, Tel-Aviv', 'Belarus, Minsk']
     const defaultCountry = 'Paris, France'
+
     const label = 'Destination'
     const icon = "./assets/icons/form/Vector.svg"
+    // const selectDefault = countries.filter(item => item !== defaultCountry)
     initSelect(node, countries, defaultCountry, label, icon)
 }
 createDestinationSelect()
 
 function createDateSelect() {
     const node = document.querySelector('#date-select')
-
     const days = ['1 Августа 2024','2 Августа 2024','3 Августа 2024','4 Августа 2024','5 Августа 2024','6 Августа 2024','7 Августа 2024','8 Августа 2024','9 Августа 2024']
+
 
     // const date = new Date();
     // const year = date.getFullYear();
@@ -111,38 +132,6 @@ function createDateSelect() {
 
 }
 createDateSelect()
-
-// открытие и закрытие селекта
-
-const selectItems = document.querySelectorAll('.select');
-const selectList = document.querySelectorAll('.select__list');
-
-selectList.forEach((item) => {
-    item.addEventListener('click', (event) =>{
-        const selectNode = event.currentTarget
-        const isSelectActive = selectNode.classList.contains('select-active');
-        if (isSelectActive) {
-            selectNode.classList.remove('select-active');
-        } else {
-            selectList.forEach((item) => {
-                item.classList.remove('select-active')
-            })
-            selectNode.classList.add('select-active')
-        }
-    })
-})
-
-
-
-
-
-
-
-
-
-
-// const selectDefault = countries.filter(item => item !== defaultCountry)
-// console.log(selectDefault)
 
 
 

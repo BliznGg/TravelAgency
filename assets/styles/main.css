@@ -246,6 +246,10 @@ fieldset {
     }
 }
 
+.select-open .select__list {
+    display: none;
+}
+
 
 
 

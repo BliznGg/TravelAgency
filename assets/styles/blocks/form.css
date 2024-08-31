@@ -202,10 +202,6 @@
 
 }
 
-.select-open {
-    display: block;
-}
-
 .form__SelectItems {
     color: var(--Black);
     font-family: var(--font-Poppins);
@@ -315,13 +311,6 @@
     }
 }
 
-.select-active {
-    background-color: red;
-}
-
-.select-active.select__list {
-    background-color: orange;
-}
 
 
 
