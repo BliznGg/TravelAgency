@@ -27,7 +27,7 @@ formButtonsNodeList.forEach((item, index) => {
             buttonNode.classList.add('active');
         }
     })
-})
+})  // этот блок меняет цвет button`ов в форме при клике подсвечивая смысловой контекст происходящего
 
 // select
 
@@ -83,10 +83,13 @@ function initSelect(node, list, activeItem,label, icon) {
             selectList.append(selectItem)
 
             selectItem.addEventListener('click', (event) =>{
-                console.log(selectItem.id)
+                console.log(event)
+                const text = event.target.textContent
+                debugger
+
             })
         }
-    })
+    })  // вывод лишек с тестом без вывода той страны, которая указана в статическом значении
 
     const selectIcon = document.createElement("img")
     selectIcon.classList.add('select__icon')
@@ -99,6 +102,8 @@ function initSelect(node, list, activeItem,label, icon) {
     selectWrapper.append(defaultCountry)
 
     node.append(select)
+
+    // создаёт струкруту разметки в HTML с получаемыми аргументами информации из других функций
 }
 
 function createDestinationSelect() {
@@ -111,6 +116,8 @@ function createDestinationSelect() {
     const icon = "./assets/icons/form/Vector.svg"
     // const selectDefault = countries.filter(item => item !== defaultCountry)
     initSelect(node, countries, defaultCountry, label, icon)
+
+    // передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Destination
 }
 createDestinationSelect()
 
@@ -129,6 +136,8 @@ function createDateSelect() {
     const label = 'Date'
     const icon = "./assets/icons/form/Calendar.svg"
     initSelect(node, days, defaultDay, label, icon)
+
+    // передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Date
 
 }
 createDateSelect()
