@@ -40,70 +40,90 @@ formButtonsNodeList.forEach((item, index) => {
 // 4) Необходимо сохранять состояние введенных данных destination и date даже при переключении на другие вкладки формы
 
 function initSelect(node, list, activeItem,label, icon) {
-    // initSelect - функция создаёт ноду и монтирует ее в HTML
-    // node - тег полученный через js куда будет создан наш селект
-    // initSelect создание селекта по аргументам функции
-    // list - массив всех элементов которые могут быть в селекте
-    // activeItem - активный текущий элемент селекта
-    // label - лейбл селекта
-    // icon  - иконка селекта
+
+    function initWrapper() {
+        const select = document.createElement('div')
+        select.classList.add('select')
 
 
-    const select = document.createElement('div')
-    select.classList.add('select')
-    select.addEventListener('click', () => {
-        select.classList.toggle('select-open');
-       // реадизовать логику показа и скрытия по клику на селект
+        const selectLabel = document.createElement('div')
+        selectLabel.classList.add('select__label')
+        selectLabel.textContent = label
+        select.append(selectLabel)
 
-       // реализовать установку списка без активного селекта (без дефолтного элемента)
-       // при клике на элемент списка закрывать список + устанавлиать на верх этот элемент на который был клик
-    })
+        const selectWrapper = document.createElement('div')
+        selectWrapper.classList.add('select__wrapper');
+        select.append(selectWrapper)
 
-    // почитать про всплытие и погружение
+        const selectList = document.createElement('ul')
+        selectList.classList.add('select__list')
+        select.append(selectList)
 
-    const selectLabel = document.createElement('div')
-    selectLabel.classList.add('select__label')
-    selectLabel.textContent = label
-    select.append(selectLabel)
+        const selectIcon = document.createElement("img")
+        selectIcon.classList.add('select__icon')
+        selectIcon.src = icon
+        selectWrapper.append(selectIcon)
 
-    const selectWrapper = document.createElement('div')
-    selectWrapper.classList.add('select__wrapper');
-    select.append(selectWrapper)
+        const defaultCountry = document.createElement('div')
+        defaultCountry.classList.add('select__countries')
+        defaultCountry.textContent = activeItem
+        selectWrapper.append(defaultCountry)
 
-    const selectList = document.createElement('ul')
-    selectList.classList.add('select__list')
-    select.append(selectList)
+        list.forEach((item, index) => {
+            const isAlreadyInList = item === activeItem
+            if(!isAlreadyInList) {
+                const selectItem= document.createElement('li')
+                selectItem.id = String(index)
+                selectItem.textContent = item
+                selectList.append(selectItem)
 
-    list.forEach((item, index) => {
-        const isAlreadyInList = item === activeItem
-        if(!isAlreadyInList) {
-            const selectItem= document.createElement('li')
-            selectItem.id = String(index)
-            selectItem.textContent = item
-            selectList.append(selectItem)
+                selectItem.addEventListener('click', (event) =>{
+                    const text = event.target.text
 
-            selectItem.addEventListener('click', (event) =>{
-                console.log(event)
-                const text = event.target.textContent
-                debugger
+                })
 
-            })
+            }
+        })  // вывод лишек с тестом без вывода той страны, которая указана в статическом значении
+
+
+
+
+
+        return {
+            select,
+            selectLabel,
+            selectWrapper,
+            selectList,
+            selectIcon,
+            defaultCountry
         }
-    })  // вывод лишек с тестом без вывода той страны, которая указана в статическом значении
+    }
 
-    const selectIcon = document.createElement("img")
-    selectIcon.classList.add('select__icon')
-    selectIcon.src = icon
-    selectWrapper.append(selectIcon)
+    function onSelect() {
+        select.addEventListener('click', () => {
+            select.classList.toggle('select-open');
+        })
 
-    const defaultCountry = document.createElement('div')
-    defaultCountry.classList.add('select__countries')
-    defaultCountry.textContent = activeItem
-    selectWrapper.append(defaultCountry)
+    }
 
-    node.append(select)
+    function onSelectItem() {
+        const list = selectList.childNodes
+        list.forEach((item, index) => {
+                item.addEventListener('click', (event) =>{
+                    const text = event.target.textContent
+                })
+        })
+    }
 
-    // создаёт струкруту разметки в HTML с получаемыми аргументами информации из других функций
+    function mountSelect(select) {
+        node.append(select)
+    }
+
+
+    const {select, selectList} = initWrapper() // создание HTML
+    onSelect(select) // инициализвация открытия\закрытие списка
+    onSelectItem(selectList)
+    mountSelect(select)
 }
 
 function createDestinationSelect() {
