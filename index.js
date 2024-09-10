@@ -68,6 +68,8 @@ function initSelect(node, list, activeItem,label, icon) {
         defaultCountry.textContent = activeItem
         selectWrapper.append(defaultCountry)
 
+
+
         list.forEach((item, index) => {
             const isAlreadyInList = item === activeItem
             if(!isAlreadyInList) {
@@ -94,11 +96,12 @@ function initSelect(node, list, activeItem,label, icon) {
         })
     }
 
-    function onSelectItem() {
+    function onSelectItem(selectList, defaultCountry) {
         const list = selectList.childNodes
         list.forEach((item, index) => {
                 item.addEventListener('click', (event) =>{
                     const text = event.target.textContent
+                    defaultCountry.textContent = text
                 })
         })
     }
@@ -107,9 +110,9 @@ function initSelect(node, list, activeItem,label, icon) {
         node.append(select)
     }
 
-    const {select, selectList} = initWrapper() // создание HTML
+    const {select, selectList, defaultCountry} = initWrapper() // создание HTML
     onSelect(select) // инициализвация открытия\закрытие списка
-    onSelectItem(selectList)
+    onSelectItem(selectList, defaultCountry)
     mountSelect(select)
 }
 
