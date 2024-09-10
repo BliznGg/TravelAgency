@@ -45,7 +45,6 @@ function initSelect(node, list, activeItem,label, icon) {
         const select = document.createElement('div')
         select.classList.add('select')
 
-
         const selectLabel = document.createElement('div')
         selectLabel.classList.add('select__label')
         selectLabel.textContent = label
@@ -76,18 +75,8 @@ function initSelect(node, list, activeItem,label, icon) {
                 selectItem.id = String(index)
                 selectItem.textContent = item
                 selectList.append(selectItem)
-
-                selectItem.addEventListener('click', (event) =>{
-                    const text = event.target.text
-
-                })
-
             }
-        })  // вывод лишек с тестом без вывода той страны, которая указана в статическом значении
-
-
-
-
+        })
 
         return {
             select,
@@ -103,7 +92,6 @@ function initSelect(node, list, activeItem,label, icon) {
         select.addEventListener('click', () => {
             select.classList.toggle('select-open');
         })
-
     }
 
     function onSelectItem() {
@@ -118,7 +106,6 @@ function initSelect(node, list, activeItem,label, icon) {
     function mountSelect(select) {
         node.append(select)
     }
-
 
     const {select, selectList} = initWrapper() // создание HTML
     onSelect(select) // инициализвация открытия\закрытие списка
