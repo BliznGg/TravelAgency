@@ -41,7 +41,10 @@ formButtonsNodeList.forEach((item, index) => {
 
 function initSelect(node, list, activeItem,label, icon) {
 
-    function initWrapper() {
+    let filteredList = []
+
+
+    function initWrapper(activeItem) {
         const select = document.createElement('div')
         select.classList.add('select')
 
@@ -68,17 +71,8 @@ function initSelect(node, list, activeItem,label, icon) {
         defaultCountry.textContent = activeItem
         selectWrapper.append(defaultCountry)
 
+        setCurrentItem(selectList, activeItem)
 
-
-        list.forEach((item, index) => {
-            const isAlreadyInList = item === activeItem
-            if(!isAlreadyInList) {
-                const selectItem= document.createElement('li')
-                selectItem.id = String(index)
-                selectItem.textContent = item
-                selectList.append(selectItem)
-            }
-        })
 
         return {
             select,
@@ -102,7 +96,26 @@ function initSelect(node, list, activeItem,label, icon) {
                 item.addEventListener('click', (event) =>{
                     const text = event.target.textContent
                     defaultCountry.textContent = text
+                    setCurrentItem(list, defaultCountry)
                 })
+        })
+    }
+
+    function setCurrentItem (list, activeItem) {
+        let array = Array.from(list.childNodes);
+        const filteredList =  array.filter(item => item.textContent !== activeItem)
+        while (list.firstChild) {
+            list.removeChild(list.firstChild);
+        }
+
+        filteredList.forEach((item, index) => {
+            const isAlreadyInList = item === activeItem
+            if(!isAlreadyInList) {
+                const selectItem= document.createElement('li')
+                selectItem.id = String(index)
+                selectItem.textContent = item
+                selectList.append(selectItem)
+            }
         })
     }
 
@@ -110,7 +123,7 @@ function initSelect(node, list, activeItem,label, icon) {
         node.append(select)
     }
 
-    const {select, selectList, defaultCountry} = initWrapper() // создание HTML
+    const {select, selectList, defaultCountry} = initWrapper(activeItem) // создание HTML
     onSelect(select) // инициализвация открытия\закрытие списка
     onSelectItem(selectList, defaultCountry)
     mountSelect(select)
