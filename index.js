@@ -39,12 +39,9 @@ formButtonsNodeList.forEach((item, index) => {
 // 3) По умолчанию при выборе flight\hotel\rent установить занчение по умолчанию - например, дата по умочланию - определеннею, стоковую
 // 4) Необходимо сохранять состояние введенных данных destination и date даже при переключении на другие вкладки формы
 
-function initSelect(node, list, activeItem,label, icon) {
+function initSelect(mountNode, list, activeItem,label, icon) {
 
-    let filteredList = []
-
-
-    function initWrapper(activeItem) {
+    function initWrapper() {
         const select = document.createElement('div')
         select.classList.add('select')
 
@@ -66,49 +63,11 @@ function initSelect(node, list, activeItem,label, icon) {
         selectIcon.src = icon
         selectWrapper.append(selectIcon)
 
-        const defaultCountry = document.createElement('div')
-        defaultCountry.classList.add('select__countries')
-        defaultCountry.textContent = activeItem
-        selectWrapper.append(defaultCountry)
+        const selectHead = document.createElement('div')
+        selectHead.classList.add('select__countries')
+        selectWrapper.append(selectHead)
 
-        setCurrentItem(selectList, activeItem)
-
-
-        return {
-            select,
-            selectLabel,
-            selectWrapper,
-            selectList,
-            selectIcon,
-            defaultCountry
-        }
-    }
-
-    function onSelect() {
-        select.addEventListener('click', () => {
-            select.classList.toggle('select-open');
-        })
-    }
-
-    function onSelectItem(selectList, defaultCountry) {
-        const list = selectList.childNodes
         list.forEach((item, index) => {
-                item.addEventListener('click', (event) =>{
-                    const text = event.target.textContent
-                    defaultCountry.textContent = text
-                    setCurrentItem(list, defaultCountry)
-                })
-        })
-    }
-
-    function setCurrentItem (list, activeItem) {
-        let array = Array.from(list.childNodes);
-        const filteredList =  array.filter(item => item.textContent !== activeItem)
-        while (list.firstChild) {
-            list.removeChild(list.firstChild);
-        }
-
-        filteredList.forEach((item, index) => {
             const isAlreadyInList = item === activeItem
             if(!isAlreadyInList) {
                 const selectItem= document.createElement('li')
@@ -117,16 +76,61 @@ function initSelect(node, list, activeItem,label, icon) {
                 selectList.append(selectItem)
             }
         })
+
+        return {
+            select,
+            selectLabel,
+            selectWrapper,
+            selectList,
+            selectIcon,
+            selectHead
+        }
     }
 
-    function mountSelect(select) {
-        node.append(select)
+    function onSelect(select) {
+        select.addEventListener('click', () => {
+            select.classList.toggle('select-open');
+        })
     }
 
-    const {select, selectList, defaultCountry} = initWrapper(activeItem) // создание HTML
+    function initItemsAction(selectList, selectHead) {
+        const list = selectList.childNodes
+        list.forEach((item, index) => {
+                item.addEventListener('click', (event) =>{
+                    const text = event.target.textContent
+                    selectHead.textContent = text
+                    setCurrentItem(list, selectHead)
+                })
+        })
+    }
+
+    function setCurrentItem (list, activeItem) {
+        // let array = Array.from(list.childNodes);
+        // const filteredList =  array.filter(item => item.textContent !== activeItem)
+        // while (list.firstChild) {
+        //     list.removeChild(list.firstChild);
+        // }
+        //
+        // filteredList.forEach((item, index) => {
+        //     const isAlreadyInList = item === activeItem
+        //     if(!isAlreadyInList) {
+        //         const selectItem= document.createElement('li')
+        //         selectItem.id = String(index)
+        //         selectItem.textContent = item
+        //         selectList.append(selectItem)
+        //     }
+        // })
+    }
+
+    function mountSelect(select, mountNode) {
+        mountNode.append(select)
+    }
+
+    const {select, selectList, selectHead} = initWrapper() // создание HTML
     onSelect(select) // инициализвация открытия\закрытие списка
-    onSelectItem(selectList, defaultCountry)
-    mountSelect(select)
+    initItemsAction(selectList, selectHead)
+    setCurrentItem(selectList, activeItem)
+    mountSelect(select, mountNode)
 }
 
 function createDestinationSelect() {
