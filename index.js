@@ -41,7 +41,8 @@ formButtonsNodeList.forEach((item, index) => {
 
 function initSelect(mountNode, list, activeItem,label, icon) {
 
-    function initWrapper() {
+    function initWrapper() {  // фун-ция создаёт HTML
+
         const select = document.createElement('div')
         select.classList.add('select')
 
@@ -65,17 +66,8 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
         const selectHead = document.createElement('div')
         selectHead.classList.add('select__countries')
+        // selectHead.textContent = activeItem
         selectWrapper.append(selectHead)
-
-        list.forEach((item, index) => {
-            const isAlreadyInList = item === activeItem
-            if(!isAlreadyInList) {
-                const selectItem= document.createElement('li')
-                selectItem.id = String(index)
-                selectItem.textContent = item
-                selectList.append(selectItem)
-            }
-        })
 
         return {
             select,
@@ -83,89 +75,75 @@ function initSelect(mountNode, list, activeItem,label, icon) {
             selectWrapper,
             selectList,
             selectIcon,
-            selectHead
+            selectHead,
         }
     }
 
-    function onSelect(select) {
+    function onSelect(select) { // фун-ция закрытия и открытия селекта
         select.addEventListener('click', () => {
             select.classList.toggle('select-open');
         })
     }
 
-    function initItemsAction(selectList, selectHead) {
-        const list = selectList.childNodes
-        list.forEach((item, index) => {
-                item.addEventListener('click', (event) =>{
+    function initSelectList (list, selectedItem, listNode, selectHead ) {
+        //li -  массив всех вохзможныъ элементов
+        const filteredListArray = list.filter(item => item !== selectedItem)
+
+        while (listNode.firstChild) {
+            listNode.removeChild(listNode.firstChild)
+        }
+        filteredListArray.forEach(item => {
+            const li= document.createElement('li')
+            li.textContent = item
+            listNode.append(li)
+        })
+
+        selectHead.textContent = selectedItem
+    }
+
+    function initItemsAction(selectList, selectHead, list) { // инициализация селекта когда пользователь нажал на селект
+        const childNodes = selectList.childNodes
+        childNodes.forEach((item) => {
+                item.addEventListener('click', (event) => {
                     const text = event.target.textContent
-                    selectHead.textContent = text
-                    setCurrentItem(list, selectHead)
+                    initSelectList(list, text, selectList, selectHead)
                 })
         })
     }
 
-    function setCurrentItem (list, activeItem) {
-        // let array = Array.from(list.childNodes);
-        // const filteredList =  array.filter(item => item.textContent !== activeItem)
-        // while (list.firstChild) {
-        //     list.removeChild(list.firstChild);
-        // }
-        //
-        // filteredList.forEach((item, index) => {
-        //     const isAlreadyInList = item === activeItem
-        //     if(!isAlreadyInList) {
-        //         const selectItem= document.createElement('li')
-        //         selectItem.id = String(index)
-        //         selectItem.textContent = item
-        //         selectList.append(selectItem)
-        //     }
-        // })
-    }
-
-    function mountSelect(select, mountNode) {
+    function mountSelect(select, mountNode) { // завершающее действие. Монтирование селекта в Html
         mountNode.append(select)
     }
 
     const {select, selectList, selectHead} = initWrapper() // создание HTML
     onSelect(select) // инициализвация открытия\закрытие списка
-    initItemsAction(selectList, selectHead)
-    setCurrentItem(selectList, activeItem)
-    mountSelect(select, mountNode)
+    // setCurrentItem(selectList, activeItem) // установка дефолтного значения
+    initSelectList (list, activeItem, selectList, selectHead) // установка активного элемента в селект
+    initItemsAction(selectList, selectHead, list) // инициализация действия на элемент // проверить тут аргументы на правильность передавания
+    mountSelect(select, mountNode) // завершающее действие. Монтирование селекта в Html
 }
 
 function createDestinationSelect() {
     const node = document.querySelector('#destination-select')
-
     const countries = ['Paris, France', 'Israel, Tel-Aviv', 'Belarus, Minsk']
     const defaultCountry = 'Paris, France'
-
     const label = 'Destination'
     const icon = "./assets/icons/form/Vector.svg"
-    // const selectDefault = countries.filter(item => item !== defaultCountry)
     initSelect(node, countries, defaultCountry, label, icon)
 
-    // передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Destination
+    // передеаём аргументы в значения чистой функции initSelect для вывода данных селекта Destination
 }
 createDestinationSelect()
 
 function createDateSelect() {
     const node = document.querySelector('#date-select')
     const days = ['1 Августа 2024','2 Августа 2024','3 Августа 2024','4 Августа 2024','5 Августа 2024','6 Августа 2024','7 Августа 2024','8 Августа 2024','9 Августа 2024']
-
-
-    // const date = new Date();
-    // const year = date.getFullYear();
-    // const month = String(date.getMonth() + 1).padStart(2, '0');
-    // const day = String(date.getDate()).padStart(2, '0');
-    // const days = `${year}-${month}-${day}`;
-
     const defaultDay = '1 Августа 2024'
     const label = 'Date'
     const icon = "./assets/icons/form/Calendar.svg"
     initSelect(node, days, defaultDay, label, icon)
 
     // передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Date
-
 }
 createDateSelect()
 
