@@ -44,6 +44,7 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
         const select = document.createElement('div')
         select.classList.add('select')
+        select.classList.add('select-open')
 
         const selectLabel = document.createElement('div')
         selectLabel.classList.add('select__label')
@@ -82,8 +83,8 @@ function initSelect(mountNode, list, activeItem,label, icon) {
             select.classList.toggle('select-open');
         })
     }
-
-    function initSelectList (list, selectedItem, listNode, selectHead ) { // фильтрация и установка активного элемента в селект
+    function initSelectList (list, selectedItem, listNode, selectHead ) {
+        // фильтрация и установка активного элемента в селект
         // list - массив всех вохзможных элементов
         // selectedItem - элемент который будет стоять по умолчанию \\ выбранный элемент
         // listNode - нода списка в которую я добавляю лишки
@@ -101,9 +102,8 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
         selectHead.textContent = selectedItem // установить в дефолтное значение выбранный элемент
     }
-    // ноды у меня удалились и добавились и теперь кликера нет на них
-    // когда я удаляю их (лишки) теперь мне нужно поставить листенер на каждый элемент
-    function updateSelect(selectList, selectHead, list) { // обрабатывает клики и обновляет список
+    function updateSelect(selectList, selectHead, list) {
+        // обрабатывает клики и обновляет список
         // selectList - нода спсика
         // selectHead - нода дива дефолтного значения
         // list список всех элементов
@@ -120,10 +120,9 @@ function initSelect(mountNode, list, activeItem,label, icon) {
         mountNode.append(select)
     }
 
-    const {select, selectList, selectHead} = initWrapper() // создание HTML
+    const {select, selectList, selectHead} = initWrapper() // инициализация скелета wrapper в первичном виде
 
     onSelect(select) // инициализвация открытия\закрытие списка
-    // setCurrentItem(selectList, activeItem) // установка дефолтного значения
     initSelectList (list, activeItem, selectList, selectHead) // установка активного элемента в селект
     updateSelect(selectList, selectHead, list) // обрабатывает клики и обновляет список
     mountSelect(select, mountNode) // завершающее действие. Монтирование селекта в Html
