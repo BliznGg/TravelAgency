@@ -36,11 +36,10 @@ formButtonsNodeList.forEach((item, index) => {
 // 1.2) после того как была выбрана страна, она должна переместиться на первую строку
 // 1.2.1) перебирать и выводить тот список оставшихся стран кроме той, которая уже стоит первой
 // 2) стилизовать input date
-// 3) По умолчанию при выборе flight\hotel\rent установить занчение по умолчанию - например, дата по умочланию - определеннею, стоковую
-// 4) Необходимо сохранять состояние введенных данных destination и date даже при переключении на другие вкладки формы
 
 function initSelect(mountNode, list, activeItem,label, icon) {
-
+    // mountNode - нода куда будет встраиваться наш селект
+    // list - список аргументов ( это массив всех возможных )
     function initWrapper() {  // фун-ция создаёт HTML
 
         const select = document.createElement('div')
@@ -66,7 +65,6 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
         const selectHead = document.createElement('div')
         selectHead.classList.add('select__countries')
-        // selectHead.textContent = activeItem
         selectWrapper.append(selectHead)
 
         return {
@@ -85,42 +83,51 @@ function initSelect(mountNode, list, activeItem,label, icon) {
         })
     }
 
-    function initSelectList (list, selectedItem, listNode, selectHead ) {
-        //li -  массив всех вохзможныъ элементов
-        const filteredListArray = list.filter(item => item !== selectedItem)
+    function initSelectList (list, selectedItem, listNode, selectHead ) { // фильтрация и установка активного элемента в селект
+        // list - массив всех вохзможных элементов
+        // selectedItem - элемент который будет стоять по умолчанию \\ выбранный элемент
+        // listNode - нода списка в которую я добавляю лишки
+        // selectHead
+        const filteredListArray = list.filter(item => item !== selectedItem) // фильтр списка без выбранного элемента
 
-        while (listNode.firstChild) {
+        while (listNode.firstChild) { // очистить весь список
             listNode.removeChild(listNode.firstChild)
         }
-        filteredListArray.forEach(item => {
+        filteredListArray.forEach(item => { // создать список заного на освное отфильтрованого списка
             const li= document.createElement('li')
             li.textContent = item
             listNode.append(li)
         })
 
-        selectHead.textContent = selectedItem
+        selectHead.textContent = selectedItem // установить в дефолтное значение выбранный элемент
     }
-
-    function initItemsAction(selectList, selectHead, list) { // инициализация селекта когда пользователь нажал на селект
-        const childNodes = selectList.childNodes
+    // ноды у меня удалились и добавились и теперь кликера нет на них
+    // когда я удаляю их (лишки) теперь мне нужно поставить листенер на каждый элемент
+    function updateSelect(selectList, selectHead, list) { // обрабатывает клики и обновляет список
+        // selectList - нода спсика
+        // selectHead - нода дива дефолтного значения
+        // list список всех элементов
+        const childNodes = selectList.childNodes // получил все дочерние элементы списка
         childNodes.forEach((item) => {
                 item.addEventListener('click', (event) => {
                     const text = event.target.textContent
                     initSelectList(list, text, selectList, selectHead)
+                    updateSelect(selectList, selectHead, list)
                 })
         })
     }
-
     function mountSelect(select, mountNode) { // завершающее действие. Монтирование селекта в Html
         mountNode.append(select)
     }
 
     const {select, selectList, selectHead} = initWrapper() // создание HTML
+
     onSelect(select) // инициализвация открытия\закрытие списка
     // setCurrentItem(selectList, activeItem) // установка дефолтного значения
     initSelectList (list, activeItem, selectList, selectHead) // установка активного элемента в селект
-    initItemsAction(selectList, selectHead, list) // инициализация действия на элемент // проверить тут аргументы на правильность передавания
+    updateSelect(selectList, selectHead, list) // обрабатывает клики и обновляет список
     mountSelect(select, mountNode) // завершающее действие. Монтирование селекта в Html
+
 }
 
 function createDestinationSelect() {
@@ -146,6 +153,9 @@ function createDateSelect() {
     // передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Date
 }
 createDateSelect()
+
+// изучить что такое jS doc/ писать с помощью s doc фун-ции.
+
 
 
 
