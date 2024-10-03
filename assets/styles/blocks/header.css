@@ -283,6 +283,7 @@ body.navigation-open {
     font-size: 20px;
     font-weight: 400;
     text-decoration: none;
+    transition: color 0.2s ease-out;
 }
 
 @media (min-width: 700px) {
@@ -308,6 +309,10 @@ body.navigation-open {
     left: 50%;
     transform: translateX(-50%);
     transition: width .2s ease-out;
+}
+
+.header__item:hover {
+    color: var(--Orange);
 }
 
 .header__item:hover::after {

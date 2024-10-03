@@ -64,7 +64,7 @@ function initSelect(mountNode, list, activeItem,label, icon) {
         selectWrapper.append(selectIcon)
 
         const selectHead = document.createElement('div')
-        selectHead.classList.add('select__countries')
+        selectHead.classList.add('select__head')
         selectWrapper.append(selectHead)
 
         return {

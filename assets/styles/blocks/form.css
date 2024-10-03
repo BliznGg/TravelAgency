@@ -95,6 +95,15 @@
     }
 }
 
+.active {
+    background-color: white;
+    color: orange;
+}
+
+.form__item:first-child .form__description {
+    border-top-left-radius: 40px;
+}
+
 .form__icon {
     width: 20px;
     height: 20px;
