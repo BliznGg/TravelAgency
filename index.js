@@ -57,7 +57,7 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
         const selectList = document.createElement('ul')
         selectList.classList.add('select__list')
-        select.append(selectList)
+        selectWrapper.append(selectList)
 
         const selectIcon = document.createElement("img")
         selectIcon.classList.add('select__icon')

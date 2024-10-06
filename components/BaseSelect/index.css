@@ -3,6 +3,7 @@
 }
 
 .select__label {
+    margin-bottom: 5px;
     color: var(--Gray);
     font-family: var(--font-Poppins);
     font-size: 14px;
@@ -18,18 +19,20 @@
 }
 
 .select__wrapper {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 21px auto;
+    grid-template-rows: 21px auto;
     align-items: center;
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 5px;
 }
 
 .select__list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    order: 1;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    row-gap: 3px;
 }
 
 .select__list li {
