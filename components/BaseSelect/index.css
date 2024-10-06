@@ -42,6 +42,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    transition: color .2s ease-out;
+}
+
+.select__list li:hover {
+    color: var(--Orange);
 }
 
 @media (min-width: 700px) {
