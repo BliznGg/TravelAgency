@@ -33,6 +33,10 @@
     grid-row: 2/3;
     grid-column: 2/3;
     row-gap: 3px;
+
+    background-color: var(--Orange);
+    width: max-content;
+    padding: 5px 5px;
 }
 
 .select__list li {
@@ -43,11 +47,23 @@
     font-weight: 700;
     line-height: normal;
     transition: color .2s ease-out;
+    cursor: pointer;
 }
 
 .select__list li:hover {
-    color: var(--Orange);
+    color: var(--White);
 }
+
+.select__list li:focus-visible {
+    outline: 1px solid var(--Orange);
+    outline-offset: 3px;
+}
+
+.select__list li:active {
+    color: #8B4804;
+}
+
+
 
 @media (min-width: 700px) {
     .select__list li {
@@ -68,12 +84,14 @@
 }
 
 .select__head {
+    padding: 0 5px;
     color: var(--Black);
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    cursor: pointer;
 }
 
 @media (min-width: 700px) {
