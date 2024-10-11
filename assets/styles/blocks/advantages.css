@@ -216,7 +216,7 @@
     width: 100%;
     align-items: center;
     border-radius: 8px;
-    background-color: var(--White);
+    background-color: var(--white-100);
     box-shadow: 0 24px 50px 0 rgba(0, 0, 0, 0.10);
 }
 
@@ -244,7 +244,7 @@
 }
 
 .advantages__ItemDescription {
-    color: var(--Black);
+    color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
@@ -281,7 +281,7 @@
 
 .advantages__title {
     margin-bottom: 4px;
-    color: var(--Orange);
+    color: var(--orange-100);
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
@@ -303,7 +303,7 @@
 }
 
 .advantages__description {
-    color: var(--Black);
+    color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 18px;
     font-style: normal;

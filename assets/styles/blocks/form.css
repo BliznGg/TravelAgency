@@ -133,7 +133,7 @@
 }
 
 .form__label {
-    color: var(--Gray);
+    color: var(--gray-100);
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
@@ -206,7 +206,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: var(--Gray);
+        background-color: var(--gray-100);
     }
 }
 
@@ -219,7 +219,7 @@
 }
 
 .form__SelectItems {
-    color: var(--Black);
+    color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
@@ -258,7 +258,7 @@
 }
 
 .form__countries {
-    color: var(--Black);
+    color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
@@ -268,8 +268,8 @@
 
 #form__input {
     border: none;
-    color: var(--Black, #2E2E2E);
-    font-family: var(--Black);
+    color: var(--black-100);
+    font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -294,8 +294,8 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    color: var(--White);
-    background-color: var(--Orange);
+    color: var(--white-100);
+    background-color: var(--orange-100);
     font-size: 14px;
     border-radius: 10px;
 }

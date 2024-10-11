@@ -1,9 +1,7 @@
 :root {
-    --Black: #2E2E2E;
-    --White: #fff;
-    --Orange: #F77A40;
-    --Background-color: #F9EADC;
-    --Background-color-1920px: #fff;
-    --Gray: #ababab;
+    --black-100: #2E2E2E;
+    --white-100: #fff;
+    --orange-100: #F77A40;
+    --gray-100: #ababab;
 }
 

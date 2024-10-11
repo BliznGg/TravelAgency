@@ -96,7 +96,7 @@
     width: 60%;
     height: 100dvh;
     transition: height .2s ease-out, right .2s ease-out;
-    background-color: var(--White);
+    background-color: var(--white-100);
     box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
 }
 
@@ -278,7 +278,7 @@ body.navigation-open {
 
 .header__item {
     position: relative;
-    color: var(--Black);
+    color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 20px;
     font-weight: 400;
@@ -304,7 +304,7 @@ body.navigation-open {
     position: absolute;
     width: 0;
     height: 6px;
-    background-color: var(--Orange);
+    background-color: var(--orange-100);
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
@@ -312,7 +312,7 @@ body.navigation-open {
 }
 
 .header__item:hover {
-    color: var(--Orange);
+    color: var(--orange-100);
 }
 
 .header__item:hover::after {
@@ -335,7 +335,7 @@ body.navigation-open {
 
 #header__hamburger:checked .header__navigation {
     right: 0;
-    color: var(--White);
+    color: var(--white-100);
 }
 
 .header__label > span,

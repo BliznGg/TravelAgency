@@ -98,7 +98,7 @@ ul {
 }
 
 .orange {
-    color: var(--Orange);
+    color: var(--orange-100);
 }
 
 .button__styles {
@@ -140,23 +140,23 @@ ul {
 }
 
 .button__styles:focus-visible {
-    background-color: var(--Black);
-    color: var(--White);
+    background-color: var(--black-100);
+    color: var(--white-100);
 }
 
 .button__styles:hover {
     background-color: #D86935;
-    color: var(--White);
+    color: var(--white-100);
 }
 
 .button__styles:active {
     background-color: #8B4804;
-    color: var(--White);
+    color: var(--white-100);
 }
 
 .sign_in {
-    background-color: var(--Orange);
-    color: var(--White);
+    background-color: var(--orange-100);
+    color: var(--white-100);
 }
 
 fieldset {

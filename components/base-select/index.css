@@ -4,7 +4,7 @@
 
 .select__label {
     margin-bottom: 5px;
-    color: var(--Gray);
+    color: var(--gray-100);
     font-family: var(--font-Poppins);
     font-size: 14px;
     font-style: normal;
@@ -34,13 +34,13 @@
     grid-column: 2/3;
     row-gap: 3px;
 
-    background-color: var(--Orange);
+    background-color: var(--orange-100);
     width: max-content;
     padding: 5px 5px;
 }
 
 .select__list li {
-    color: var(--Black);
+    color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 11px;
     font-style: normal;
@@ -51,11 +51,11 @@
 }
 
 .select__list li:hover {
-    color: var(--White);
+    color: var(--white-100);
 }
 
 .select__list li:focus-visible {
-    outline: 1px solid var(--Orange);
+    outline: 1px solid var(--orange-100);
     outline-offset: 3px;
 }
 
@@ -85,7 +85,7 @@
 
 .select__head {
     padding: 0 5px;
-    color: var(--Black);
+    color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 12px;
     font-style: normal;
