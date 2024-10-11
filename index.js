@@ -37,10 +37,17 @@ formButtonsNodeList.forEach((item, index) => {
 // 1.2.1) перебирать и выводить тот список оставшихся стран кроме той, которая уже стоит первой
 // 2) стилизовать input date
 
+/**
+ * фун-ция инициализирует селект
+ */
 function initSelect(mountNode, list, activeItem,label, icon) {
     // mountNode - нода куда будет встраиваться наш селект
     // list - список аргументов ( это массив всех возможных )
-    function initWrapper() {  // фун-ция создаёт HTML
+
+    /**
+     * фун-ция создаёт HTML
+     */
+    function initWrapper() {  //
 
         const select = document.createElement('div')
         select.classList.add('select')
@@ -78,13 +85,20 @@ function initSelect(mountNode, list, activeItem,label, icon) {
         }
     }
 
-    function onSelect(select) { // фун-ция закрытия и открытия селекта
+    /**
+     * фун-ция закрытия и открытия селекта
+     */
+    function onSelect(select) {
         select.addEventListener('click', () => {
             select.classList.toggle('select-open');
         })
     }
+
+    /**
+     * фун-ция фильтрует и устанавливает активный элемент в селект
+     */
     function initSelectList (list, selectedItem, listNode, selectHead ) {
-        // фильтрация и установка активного элемента в селект
+        //
         // list - массив всех вохзможных элементов
         // selectedItem - элемент который будет стоять по умолчанию \\ выбранный элемент
         // listNode - нода списка в которую я добавляю лишки
@@ -102,8 +116,12 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
         selectHead.textContent = selectedItem // установить в дефолтное значение выбранный элемент
     }
+
+    /**
+     * фун-ция обрабатывает клики и обновляет список
+     */
     function updateSelect(selectList, selectHead, list) {
-        // обрабатывает клики и обновляет список
+        //
         // selectList - нода спсика
         // selectHead - нода дива дефолтного значения
         // list список всех элементов
@@ -116,19 +134,26 @@ function initSelect(mountNode, list, activeItem,label, icon) {
                 })
         })
     }
-    function mountSelect(select, mountNode) { // завершающее действие. Монтирование селекта в Html
+
+    /**
+     *  фун-ция монтирования селекта в Html
+     */
+    function mountSelect(select, mountNode) {
         mountNode.append(select)
     }
 
     const {select, selectList, selectHead} = initWrapper() // инициализация скелета wrapper в первичном виде
 
-    onSelect(select) // инициализвация открытия\закрытие списка
-    initSelectList (list, activeItem, selectList, selectHead) // установка активного элемента в селект
-    updateSelect(selectList, selectHead, list) // обрабатывает клики и обновляет список
-    mountSelect(select, mountNode) // завершающее действие. Монтирование селекта в Html
+    onSelect(select)
+    initSelectList (list, activeItem, selectList, selectHead)
+    updateSelect(selectList, selectHead, list)
+    mountSelect(select, mountNode)
 
 }
 
+/**
+ * передеаём аргументы в значения чистой функции initSelect для вывода данных селекта Destination
+ */
 function createDestinationSelect() {
     const node = document.querySelector('#destination-select')
     const countries = ['Paris, France', 'Israel, Tel-Aviv', 'Belarus, Minsk']
@@ -136,11 +161,12 @@ function createDestinationSelect() {
     const label = 'Destination'
     const icon = "./assets/icons/form/Vector.svg"
     initSelect(node, countries, defaultCountry, label, icon)
-
-    // передеаём аргументы в значения чистой функции initSelect для вывода данных селекта Destination
 }
 createDestinationSelect()
 
+/**
+ * передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Date
+ */
 function createDateSelect() {
     const node = document.querySelector('#date-select')
     const days = ['1 Августа 2024','2 Августа 2024','3 Августа 2024','4 Августа 2024','5 Августа 2024','6 Августа 2024','7 Августа 2024','8 Августа 2024','9 Августа 2024']
@@ -148,12 +174,9 @@ function createDateSelect() {
     const label = 'Date'
     const icon = "./assets/icons/form/Calendar.svg"
     initSelect(node, days, defaultDay, label, icon)
-
-    // передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Date
 }
 createDateSelect()
 
-// изучить что такое jS doc/ писать с помощью s doc фун-ции.
 
 
 
