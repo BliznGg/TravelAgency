@@ -12,6 +12,10 @@ function myFunction() {
 // form buttons style
 const formButtonsNodeList = document.querySelectorAll('.form__description');
 
+
+/**
+ *  блок меняет цвет button`ов в форме при клике подсвечивая смысловой контекст происходящего
+ */
 formButtonsNodeList.forEach((item, index) => {
     item.addEventListener('click', (event) => {
         // event это объект который содержит информацию о произошедшем клике на элемент
@@ -27,31 +31,22 @@ formButtonsNodeList.forEach((item, index) => {
             buttonNode.classList.add('active');
         }
     })
-})  // этот блок меняет цвет button`ов в форме при клике подсвечивая смысловой контекст происходящего
+})
 
-// select
-
-// 1) реализовать селект с выбором destination. который будет копировать полную логику тега select
-// 1.1) список открывается и сразу сделать проверку, где должны быть все элементы из списка кроме выбранного
-// 1.2) после того как была выбрана страна, она должна переместиться на первую строку
-// 1.2.1) перебирать и выводить тот список оставшихся стран кроме той, которая уже стоит первой
-// 2) стилизовать input date
 
 /**
  * фун-ция инициализирует селект
- * @param {Element} mountNode нода селекта Destination или Date
+ * @param {Element} mountNode нода селекта Destination или Date, куда будет встраиваться наш селект
  * @param {string[]} list список аргументов ( это массив всех возможных )
- * @param {string} activeItem строка, которая находтся в head селекта
+ * @param {string} activeItem строка, которая находится в head селекта
  * @param {string} label название селекта в селекте Destination или Date
  * @param {string} icon ссылка на иконку
- * @return
  */
 function initSelect(mountNode, list, activeItem,label, icon) {
-    // mountNode - нода куда будет встраиваться наш селект
-    // list - список аргументов ( это массив всех возможных )
 
     /**
      * фун-ция создаёт HTML
+     * @return { {select:HTMLDivElement, selectLabel:HTMLDivElement, selectWrapper:HTMLDivElement, selectList:HTMLDivElement, selectIcon:HTMLDivElement, selectHead:HTMLDivElement} }
      */
     function initWrapper() {  //
 
@@ -93,6 +88,7 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
     /**
      * фун-ция закрытия и открытия селекта
+     * @param {HTMLDivElement} select нода самого селекта
      */
     function onSelect(select) {
         select.addEventListener('click', () => {
@@ -102,13 +98,12 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
     /**
      * фун-ция фильтрует и устанавливает активный элемент в селект
+     * @param {string[]} list  массив всех вохзможных элементов
+     * @param {string} selectedItem  элемент который будет стоять по умолчанию \\ выбранный элемент
+     * @param {HTMLDivElement} listNode  нода списка в которую я добавляю лишки
+     * @param {HTMLDivElement} selectHead нода активного элеента
      */
     function initSelectList (list, selectedItem, listNode, selectHead ) {
-        //
-        // list - массив всех вохзможных элементов
-        // selectedItem - элемент который будет стоять по умолчанию \\ выбранный элемент
-        // listNode - нода списка в которую я добавляю лишки
-        // selectHead
         const filteredListArray = list.filter(item => item !== selectedItem) // фильтр списка без выбранного элемента
 
         while (listNode.firstChild) { // очистить весь список
@@ -125,12 +120,12 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
     /**
      * фун-ция обрабатывает клики и обновляет список
+     * @param {HTMLDivElement} selectList нода спсика
+     * @param {HTMLDivElement} selectHead нода дива дефолтного значения
+     * @param {string[]} list список всех элементов
      */
     function updateSelect(selectList, selectHead, list) {
-        //
-        // selectList - нода спсика
-        // selectHead - нода дива дефолтного значения
-        // list список всех элементов
+
         const childNodes = selectList.childNodes // получил все дочерние элементы списка
         childNodes.forEach((item) => {
                 item.addEventListener('click', (event) => {
@@ -143,6 +138,8 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
     /**
      *  фун-ция монтирования селекта в Html
+     *  @param {HTMLDivElement} select нода самого селекта
+     *  @param {Element} mountNode нода селекта Destination или Date, куда будет встраиваться наш селект
      */
     function mountSelect(select, mountNode) {
         mountNode.append(select)
@@ -173,6 +170,8 @@ createDestinationSelect()
 /**
  * передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Date
  */
+
+
 function createDateSelect() {
     const node = document.querySelector('#date-select')
     const days = ['1 Августа 2024','2 Августа 2024','3 Августа 2024','4 Августа 2024','5 Августа 2024','6 Августа 2024','7 Августа 2024','8 Августа 2024','9 Августа 2024']
