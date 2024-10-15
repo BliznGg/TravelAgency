@@ -20,6 +20,7 @@
 
 .select__wrapper {
     display: grid;
+    position: relative;
     grid-template-columns: 21px auto;
     grid-template-rows: 21px auto;
     align-items: center;
@@ -29,12 +30,13 @@
 
 .select__list {
     display: grid;
+    position: absolute;
     order: 1;
     grid-row: 2/3;
     grid-column: 2/3;
     row-gap: 3px;
-
-    background-color: var(--orange-100);
+    left: 0;
+    top: -10px;
     width: max-content;
     padding: 5px 5px;
 }
@@ -51,7 +53,7 @@
 }
 
 .select__list li:hover {
-    color: var(--white-100);
+    color: var(--orange-100);
 }
 
 .select__list li:focus-visible {
