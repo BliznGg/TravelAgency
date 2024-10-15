@@ -100,7 +100,7 @@ function initSelect(mountNode, list, activeItem,label, icon) {
      * фун-ция фильтрует и устанавливает активный элемент в селект
      * @param {string[]} list  массив всех вохзможных элементов
      * @param {string} selectedItem  элемент который будет стоять по умолчанию \\ выбранный элемент
-     * @param {HTMLDivElement} listNode  нода списка в которую я добавляю лишки
+     * @param {HTMLDivElement} listNode  нода списка в которую добавляются лишки
      * @param {HTMLDivElement} selectHead нода активного элеента
      */
     function initSelectList (list, selectedItem, listNode, selectHead ) {
@@ -111,8 +111,12 @@ function initSelect(mountNode, list, activeItem,label, icon) {
         }
         filteredListArray.forEach(item => { // создать список заного на освное отфильтрованого списка
             const li= document.createElement('li')
-            li.textContent = item
+            const button = document.createElement('button')
+
+            button.textContent = item
             listNode.append(li)
+            li.append((button))
+
         })
 
         selectHead.textContent = selectedItem // установить в дефолтное значение выбранный элемент
