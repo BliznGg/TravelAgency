@@ -75,6 +75,12 @@ ul {
     }
 }
 
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 100px 0 100px;
+    }
+}
+
 @media (min-width: 1440px) {
     .container {
         padding: 0 86px 0 86px;

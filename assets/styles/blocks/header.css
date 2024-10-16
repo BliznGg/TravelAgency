@@ -33,6 +33,18 @@
     }
 }
 
+@media (min-width: 1200px) {
+    .header__container {
+        padding: 25px 100px 25px 100px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .header__container {
+        padding: 25px 100px;
+    }
+}
+
 .header__logo {
     display: flex;
     align-items: center;

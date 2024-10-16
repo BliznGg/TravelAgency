@@ -11,7 +11,7 @@
 @media (min-width: 922px) {
     .form {
         padding: 15px 0;
-        max-width: 566px;
+        min-width: 575px;
     }
 }
 
@@ -22,20 +22,19 @@
     }
 }
 
-
 .form__booking {
     width: 100%;
 }
 
 @media (min-width: 700px) {
     .form__booking {
-        max-width: 578px;
+        max-width: 520px;
     }
 }
 
 @media (min-width: 1440px) {
     .form__booking {
-        max-width: 922px;
+        max-width: 775px;
     }
 }
 

@@ -94,6 +94,15 @@
     font-weight: 700;
     line-height: normal;
     cursor: pointer;
+    transition: color 0.2s ease-out;
+}
+
+.select__head:hover {
+    color: var(--orange-100)
+}
+
+.select__head:active {
+    color: #8B4804
 }
 
 @media (min-width: 700px) {

@@ -1,6 +1,5 @@
 .advantages {
     padding: 15px 0;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.10);
 }
 
 @media (min-width: 400px) {
@@ -22,6 +21,7 @@
 @media (min-width: 700px) {
     .advantages {
         box-shadow: unset;
+        padding: 5px 0;
     }
 }
 
@@ -32,7 +32,7 @@
         width: 640px;
         height: 561px;
         top: 60px;
-        right: 3%;
+        right: 100px;
         background-color: transparent;
         overflow: unset;
         box-shadow: unset;
@@ -40,11 +40,13 @@
     }
 }
 
+
+
 @media (min-width: 1440px) {
     .advantages {
         width: 974px;
         height: 810px;
-        right: 1%;
+        right: 100px;
         top: 5px;
     }
 }
@@ -111,7 +113,7 @@
         width: auto;
         height: auto;
         top: -6px;
-        left: -5px;
+        left: 2px;
         max-width: 566px;
     }
 }
@@ -126,6 +128,7 @@
 @media (min-width: 700px) {
     .advantages__GirlImage {
         left: 37%;
+        top: -66px;
     }
 }
 
@@ -309,6 +312,16 @@
     font-style: normal;
     font-weight: var(--weight-700);
     line-height: normal;
+    cursor: pointer;
+    transition: color 0.2s ease-out;
+}
+
+.advantages__description:hover {
+    color: var(--orange-100);
+}
+
+.advantages__description:active {
+    color: #8B4804;;
 }
 
 @media (min-width: 320px) {
