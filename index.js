@@ -9,14 +9,13 @@ function myFunction() {
     document.body.classList.toggle('navigation-open')
 }
 
+/**
+ *  блок меняет цвет button`ов в форме при клике подсвечивая выбранный блок
+ */
 // form buttons style
 const formButtonsNodeList = document.querySelectorAll('.form__description');
 
-
-/**
- *  блок меняет цвет button`ов в форме при клике подсвечивая смысловой контекст происходящего
- */
-formButtonsNodeList.forEach((item, index) => {
+formButtonsNodeList.forEach((item) => {
     item.addEventListener('click', (event) => {
         // event это объект который содержит информацию о произошедшем клике на элемент
         event.preventDefault()
