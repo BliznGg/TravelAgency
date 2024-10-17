@@ -50,9 +50,22 @@ ul {
     margin: 0;
 }
 
-.main {
+.main__container {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+@media (min-width: 1200px) {
+    .main__container  {
+        padding: 0 100px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .main__container  {
+        padding: 0;
+    }
 }
 
 .container {
@@ -82,7 +95,7 @@ ul {
 
 @media (min-width: 1200px) {
     .container {
-        padding: 0 100px 0 100px;
+        padding: 0;
     }
 }
 

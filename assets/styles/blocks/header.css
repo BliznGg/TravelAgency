@@ -16,6 +16,7 @@
         min-height: 89px;
         background-color: transparent;
         box-shadow: unset;
+        z-index: 5;
     }
 }
 
@@ -41,7 +42,7 @@
 
 @media (min-width: 1300px) {
     .header__container {
-        padding: 25px 100px;
+        padding: 25px 86px;
     }
 }
 
@@ -178,6 +179,7 @@ body.navigation-open {
 
 .header__buttons {
     gap: 6px;
+    z-index: 10;
 }
 
 @media (min-width: 400px) {

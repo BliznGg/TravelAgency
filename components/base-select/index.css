@@ -25,7 +25,6 @@
     grid-template-rows: 21px auto;
     align-items: center;
     column-gap: 10px;
-    row-gap: 5px;
 }
 
 .select__list {
@@ -36,13 +35,26 @@
     grid-column: 2/3;
     row-gap: 3px;
     left: 0;
-    top: -6px;
+    top: 2px;
     width: max-content;
     padding: 5px 5px;
     background-color: white;
+    z-index: 1;
+    box-shadow: 0 0 1px -0.5px var(--black-100);
+    border-radius: 6px;
 }
 
-.select__list li button {
+@media (min-width: 922px) {
+    .select__list {
+        top: 5px;
+    }
+}
+
+.select__item {
+    padding: 0 10px;
+}
+
+.select__button {
     color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 11px;
@@ -51,36 +63,35 @@
     line-height: normal;
     transition: color .2s ease-out;
     cursor: pointer;
-    border-bottom: 1px solid var(--black-100)
 }
 
-.select__list li button:hover {
+.select__button:hover {
     color: var(--orange-100);
 }
 
-.select__list li button:focus-visible {
+.select__button:focus-visible {
     outline: 1px solid var(--black-100);
     outline-offset: 3px;
 }
 
-.select__list li button:active {
+.select__button:active {
     color: #8B4804;
 }
 
 @media (min-width: 700px) {
-    .select__list li button {
+    .select__button {
         font-size: 14px;
     }
 }
 
 @media (min-width: 922px) {
-    .select__list li button {
+    .select__button {
         font-size: 16px;
     }
 }
 
 @media (min-width: 1440px) {
-    .select__list li button {
+    .select__button {
         font-size: 18px;
     }
 }
@@ -95,6 +106,12 @@
     line-height: normal;
     cursor: pointer;
     transition: color 0.2s ease-out;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 .select__head:hover {
