@@ -50,6 +50,11 @@ ul {
     margin: 0;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
