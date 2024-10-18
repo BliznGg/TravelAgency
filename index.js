@@ -3,11 +3,43 @@ const burger = document.querySelector('.header__label')
 
 const navigation = document.querySelector('.header__navigation')
 
-burger.addEventListener("click", myFunction);
+burger.addEventListener("click", toggleNavigation);
 
-function myFunction() {
+function openNavigation() {
+    document.body.classList.add('navigation-open')
+}
+
+function closeNavigation() {
+    document.body.classList.remove('navigation-open')
+}
+
+function toggleNavigation() {
     document.body.classList.toggle('navigation-open')
 }
+
+
+document.addEventListener('click', event => {
+    const target = event.target; // получаю элемент по которому кликнули
+    const isNavigationClick = navigation.contains(target); // проверка на то был ли клик по навигации (если нода в ноде)
+    const isNavigationOpen = document.body.classList.contains('navigation-open'); // проверяем открыта ли навигация
+    const isBurgerClick = burger === target // проверка на клик по бургеру
+
+    // if(isNavigationOpen && !isNavigationClick && !isBurgerClick) {
+    //     closeNavigation()
+    // }
+
+    if(isNavigationOpen) {
+        if(!isNavigationClick && !isBurgerClick) {
+            closeNavigation()
+        }
+    }
+// какие условия должны соблюдаться что бы при клике вне навигации навигация закрывалась
+//     1) навигация должна быть открыта И клик вне области навигации И проверить что клик был не на бургер
+//     2)
+//     3)
+
+})
+
 
 /**
  *  блок меняет цвет button`ов в форме при клике подсвечивая выбранный блок
@@ -110,12 +142,13 @@ function initSelect(mountNode, list, activeItem,label, icon) {
         }
         filteredListArray.forEach(item => { // создать список заного на освное отфильтрованого списка
             const li= document.createElement('li')
+            li.classList.add('select__item')
             const button = document.createElement('button')
+            button.classList.add('select__button')
 
             button.textContent = item
             listNode.append(li)
             li.append((button))
-
         })
 
         selectHead.textContent = selectedItem // установить в дефолтное значение выбранный элемент
