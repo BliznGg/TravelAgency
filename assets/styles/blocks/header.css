@@ -151,25 +151,13 @@ body.navigation-open {
 .header__label {
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    position: relative;
     width: 25px;
     height: 26px;
     cursor: pointer;
     z-index: 4;
 }
 
-.header__label {
-    display: flex;
-}
-
-@media (min-width: 576px) {
-    .header__label {
-        top: 30px;
-        right: 25px;
-    }
-}
 
 @media (min-width: 700px) {
     .header__label {
@@ -333,21 +321,21 @@ body.navigation-open {
     width: 70%;
 }
 
-#header__hamburger:checked ~ .header__label > span {
+.navigation-open .header__label > span {
     transform: rotate(45deg);
 }
 
-#header__hamburger:checked ~ .header__label > span::before {
+.navigation-open .header__label > span::before {
     top: 0;
     transform: rotate(0);
 }
 
-#header__hamburger:checked ~ .header__label > span::after {
+.navigation-open .header__label > span::after {
     top: 0;
     transform: rotate(90deg);
 }
 
-#header__hamburger:checked .header__navigation {
+.navigation-open .header__navigation {
     right: 0;
     color: var(--white-100);
 }

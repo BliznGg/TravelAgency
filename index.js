@@ -22,27 +22,22 @@ document.addEventListener('click', event => {
     const target = event.target; // получаю элемент по которому кликнули
     const isNavigationClick = navigation.contains(target); // проверка на то был ли клик по навигации (если нода в ноде)
     const isNavigationOpen = document.body.classList.contains('navigation-open'); // проверяем открыта ли навигация
-    const isBurgerClick = burger === target // проверка на клик по бургеру
+    const isBurgerClick = burger === target ||  burger.contains(target) // проверка на клик по бургеру или спану
+    console.log(event.target)
 
-    // if(isNavigationOpen && !isNavigationClick && !isBurgerClick) {
-    //     closeNavigation()
-    // }
-
-    if(isNavigationOpen) {
-        if(!isNavigationClick && !isBurgerClick) {
-            closeNavigation()
-        }
+    if(isNavigationOpen && !isNavigationClick && !isBurgerClick) {
+        closeNavigation()
     }
+
 // какие условия должны соблюдаться что бы при клике вне навигации навигация закрывалась
 //     1) навигация должна быть открыта И клик вне области навигации И проверить что клик был не на бургер
-//     2)
-//     3)
-
 })
 
 
+
+
 /**
- *  блок меняет цвет button`ов в форме при клике подсвечивая выбранный блок
+ *  блок form__list меняет цвет button`ов в форме при клике подсвечивая выбранный блок
  */
 // form buttons style
 const formButtonsNodeList = document.querySelectorAll('.form__description');
