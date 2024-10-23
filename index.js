@@ -27,25 +27,17 @@ document.addEventListener('click', event => {
 //     1) навигация должна быть открыта И клик вне области навигации И проверить что клик был не на бургер
 })
 
-document.addEventListener('click', event => {
-    const target = event.target
-    const navigationLinks = document.querySelectorAll('.header__item')
-    const isNavigationOpen = document.body.classList.contains('navigation-open')
-    let isNavigationLinksClick = false
 
-    navigationLinks.forEach(link => {
-        if(link.contains(target)) {
-            isNavigationLinksClick = true
-        }
+/**
+ * закрывать навигацию при клике на ссылку навигации
+ */
+function initNavigation() {
+    const navigationList = document.querySelectorAll('.header__item')
+    navigationList.forEach(link => {
+        link.addEventListener('click',closeNavigation)
     })
-
-    if(isNavigationOpen && isNavigationLinksClick) {
-        closeNavigation()
-    }
-})
-// какие условия должны соблюдаться что бы при клике по ссылкам навигации - навигация закрывалась
-// 1) навигация должна быть открыта И клик должен быть по ссылке
-
+}
+initNavigation()
 
 /**
  *  блок form__list меняет цвет button`ов в форме при клике подсвечивая выбранный блок
@@ -83,7 +75,7 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
     /**
      * фун-ция создаёт HTML
-     * @return { {select:HTMLDivElement, selectLabel:HTMLDivElement, selectWrapper:HTMLDivElement, selectList:HTMLDivElement, selectIcon:HTMLDivElement, selectHead:HTMLDivElement} }
+     * @return { {select:HTMLDivElement, selectLabel:HTMLDivElement, selectWrapper:HTMLDivElement, selectList:HTMLUListElement, selectIcon:HTMLImageElement, selectHead:HTMLDivElement} }
      */
     function initWrapper() {  //
 
@@ -193,7 +185,6 @@ function initSelect(mountNode, list, activeItem,label, icon) {
     initSelectList (list, activeItem, selectList, selectHead)
     updateSelect(selectList, selectHead, list)
     mountSelect(select, mountNode)
-
 }
 
 /**
@@ -213,7 +204,6 @@ createDestinationSelect()
  * передеаём аргементы в значения чистой функции initSelect для вывода данных селекта Date
  */
 
-
 function createDateSelect() {
     const node = document.querySelector('#date-select')
     const days = ['1 Августа 2024','2 Августа 2024','3 Августа 2024','4 Августа 2024','5 Августа 2024','6 Августа 2024','7 Августа 2024','8 Августа 2024','9 Августа 2024']
@@ -226,9 +216,38 @@ createDateSelect()
 
 
 
+const selectDestination = document.querySelector('#destination-select')
+const formSelect = document.querySelectorAll('.select');
+
+function selectClose() {
+        document.body.classList.add('select-open');
+}
+
+document.addEventListener('click', event => {
+
+    const target = event.target
+    const isSelectClick = selectDestination.contains(target)
+    const selects = document.querySelectorAll('.select');
+    let isSelectClose = true
 
 
+    selects.forEach( select => {
+        if(select.classList.contains('.select-open')) {
+            isSelectClose = false
+        }
+    })
 
+    if(isSelectClose && !isDestinationClick) {
+        selectClose()
+    }
+})
+
+// какие условия должны соблюдаться что бы при клике по ссылкам селекта - навигация закрывалась
+// 1) селект должен  быть открыт И клик вне области селекта
+
+// Вот как это можно сделать:
+//
+//     Перед открытием одного селекта нужно закрыть все другие селекты??????
 
 
 
