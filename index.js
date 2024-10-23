@@ -31,13 +31,13 @@ document.addEventListener('click', event => {
 /**
  * закрывать навигацию при клике на ссылку навигации
  */
-function initNavigation() {
+function initCloseBurgerOnLinks() {
     const navigationList = document.querySelectorAll('.header__item')
     navigationList.forEach(link => {
         link.addEventListener('click',closeNavigation)
     })
 }
-initNavigation()
+initCloseBurgerOnLinks()
 
 /**
  *  блок form__list меняет цвет button`ов в форме при клике подсвечивая выбранный блок
@@ -129,7 +129,7 @@ function initSelect(mountNode, list, activeItem,label, icon) {
      * фун-ция фильтрует и устанавливает активный элемент в селект
      * @param {string[]} list  массив всех вохзможных элементов
      * @param {string} selectedItem  элемент который будет стоять по умолчанию \\ выбранный элемент
-     * @param {HTMLDivElement} listNode  нода списка в которую добавляются лишки
+     * @param {HTMLUListElement} listNode  нода списка в которую добавляются лишки
      * @param {HTMLDivElement} selectHead нода активного элеента
      */
     function initSelectList (list, selectedItem, listNode, selectHead ) {
@@ -154,7 +154,7 @@ function initSelect(mountNode, list, activeItem,label, icon) {
 
     /**
      * фун-ция обрабатывает клики и обновляет список
-     * @param {HTMLDivElement} selectList нода спсика
+     * @param {HTMLUListElement} selectList нода спсика
      * @param {HTMLDivElement} selectHead нода дива дефолтного значения
      * @param {string[]} list список всех элементов
      */
@@ -216,43 +216,45 @@ createDateSelect()
 
 
 
-const selectDestination = document.querySelector('#destination-select')
-const formSelect = document.querySelectorAll('.select');
 
-function selectClose() {
-        document.body.classList.add('select-open');
+function closeAllSelectors() {
+    const selects = document.querySelectorAll('.select');
+    selects.forEach(select => {
+        select.classList.add('select-open');
+    });
 }
 
-document.addEventListener('click', event => {
-
-    const target = event.target
-    const isSelectClick = selectDestination.contains(target)
+function closeAllSelectors() {
     const selects = document.querySelectorAll('.select');
-    let isSelectClose = true
+    selects.forEach(select => {
+        select.classList.add('select-open');
+    });
+}
 
+function initCloseSelectLinks() {
+    document.addEventListener('click', event => {
+        const target = event.target;
+        const selects = document.querySelectorAll('.select');
+        const arrSelects = Array.from(selects)
 
-    selects.forEach( select => {
-        if(select.classList.contains('.select-open')) {
-            isSelectClose = false
+        const isClickOnSelect = arrSelects.reduce((accum, select) => {
+            if (select.contains(target)) {
+                return true
+            } else {
+                return accum
+            }
+        }, false)
+
+        if (!isClickOnSelect) {
+            closeAllSelectors();
         }
-    })
+    });
+}
+initCloseSelectLinks()
 
-    if(isSelectClose && !isDestinationClick) {
-        selectClose()
-    }
-})
-
-// какие условия должны соблюдаться что бы при клике по ссылкам селекта - навигация закрывалась
-// 1) селект должен  быть открыт И клик вне области селекта
-
-// Вот как это можно сделать:
-//
-//     Перед открытием одного селекта нужно закрыть все другие селекты??????
-
-
-
-
-
-
-
-
+// 1) сделать функцию
+// 2) вызвать ее
+// 3) создать глоб слушатель и в нем на каждый клик получить все элементы селекта (массив)
+// 4) сделать переменную isClickOnSelect
+// 5) перебрать все ноды редюсом и проверить внутри reduce c помощью  contains был ли клик по  ноде.
+// 6) и вернуть тру или фолс. Если тру, то все селекты не нужно закрывать, если фолс (т.е. клик был вне селекта) значит нужно закрыть все селекты
