@@ -111,16 +111,6 @@ ul {
     }
 }
 
-.flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.font__size__0 {
-    font-size: 0;
-}
-
 .orange {
     color: var(--orange-100);
 }
@@ -188,26 +178,3 @@ fieldset {
     padding: 0;
     border: none;
 }
-
-.form_wrapper-style {
-    margin-bottom: 25px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
