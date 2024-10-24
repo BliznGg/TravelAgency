@@ -224,7 +224,7 @@ function closeAllSelectors() {
     });
 }
 
-function closeAllSelectors() {
+function closeAllSelects() {
     const selects = document.querySelectorAll('.select');
     selects.forEach(select => {
         select.classList.add('select-open');
@@ -238,23 +238,14 @@ function initCloseSelectLinks() {
         const arrSelects = Array.from(selects)
 
         const isClickOnSelect = arrSelects.reduce((accum, select) => {
-            if (select.contains(target)) {
-                return true
-            } else {
-                return accum
-            }
+            return select.contains(target) || accum;
         }, false)
 
         if (!isClickOnSelect) {
-            closeAllSelectors();
+            closeAllSelects();
         }
     });
 }
 initCloseSelectLinks()
 
-// 1) сделать функцию
-// 2) вызвать ее
-// 3) создать глоб слушатель и в нем на каждый клик получить все элементы селекта (массив)
-// 4) сделать переменную isClickOnSelect
-// 5) перебрать все ноды редюсом и проверить внутри reduce c помощью  contains был ли клик по  ноде.
-// 6) и вернуть тру или фолс. Если тру, то все селекты не нужно закрывать, если фолс (т.е. клик был вне селекта) значит нужно закрыть все селекты
+
