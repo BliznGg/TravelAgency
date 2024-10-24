@@ -167,7 +167,7 @@ body.navigation-open {
 
 .header__buttons {
     gap: 6px;
-    /*z-index: 4;*/
+
 }
 
 @media (min-width: 400px) {
@@ -179,9 +179,7 @@ body.navigation-open {
 @media (min-width: 576px) {
     .header__buttons {
         gap: 15px;
-        padding-right: 75px;
         padding-left: 75px;
-        order: 1;
     }
 }
 
@@ -189,6 +187,14 @@ body.navigation-open {
     .header__buttons {
         gap: 15px;
         padding: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .header__buttons {
+        gap: 15px;
+        padding: 0;
+        z-index: 2;
     }
 }
 
