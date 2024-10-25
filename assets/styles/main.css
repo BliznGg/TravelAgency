@@ -111,10 +111,6 @@ ul {
     }
 }
 
-.orange {
-    color: var(--orange-100);
-}
-
 .button__styles {
     padding: 5px 15px;
     font-family: var(--font-Poppins);

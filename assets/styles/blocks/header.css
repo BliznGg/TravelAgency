@@ -81,6 +81,41 @@
     }
 }
 
+.header__orange {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-Oswald);
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: var(--orange-100);
+}
+
+@media (min-width: 576px) {
+    .header__orange {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 700px) {
+    .header__orange {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 922px) {
+    .header__orange {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .header__orange {
+        font-size: 36px;
+    }
+}
+
 .header__link {
     display: flex;
     justify-content: center;
