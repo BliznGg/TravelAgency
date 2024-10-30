@@ -1,8 +1,8 @@
 @font-face {
     font-family: "Oswald";
     src: local('OswaldSemiBold'),
-        url('./oswald/oswald-semi-bold.woff2') format('woff2'),
-        url('./oswald/oswald-semi-bold.woff') format('woff');
+        url('oswald/oswaldSemiBold.woff2') format('woff2'),
+        url('oswald/oswaldSemiBold.woff') format('woff');
     font-display: swap;
     font-weight: 600;
     font-style: normal;
@@ -11,8 +11,8 @@
 @font-face {
     font-family: "Poppins";
     src: local('PoppinsBold'),
-        url('./poppins/poppins-bold.woff2') format('woff2'),
-        url('./poppins/poppins-bold.woff') format('woff');
+        url('poppins/poppinsBold.woff2') format('woff2'),
+        url('poppins/poppinsBold.woff') format('woff');
     font-display: swap;
     font-weight: 700;
     font-style: normal;
@@ -21,8 +21,8 @@
 @font-face {
     font-family: "Poppins";
     src: local('PoppinsMedium'),
-        url('./poppins/poppins-medium.woff2') format('woff2'),
-        url('./poppins/poppins-medium.woff') format('woff');
+        url('poppins/poppinsMedium.woff2') format('woff2'),
+        url('poppins/poppinsMedium.woff') format('woff');
     font-display: swap;
     font-weight: 500;
     font-style: normal;
@@ -31,8 +31,8 @@
 @font-face {
     font-family: "Poppins";
     src: local("PoppinsRegular"),
-        url("./poppins/poppins-regular.woff2") format('woff2'),
-        url("./poppins/poppins-regular.woff") format('woff');
+        url("poppins/poppinsRegular.woff2") format('woff2'),
+        url("poppins/poppinsRegular.woff") format('woff');
     font-display: swap;
     font-weight: 300;
     font-style: normal;
@@ -41,8 +41,8 @@
 @font-face {
     font-family: "BebasNeue";
     src: local('BebasNeueRegular'),
-        url('./bebas/bebas-neue-regular.woff2') format('woff2'),
-        url('./bebas/bebas-neue-regular.woff') format('woff');
+        url('bebas/bebasNeueRegular.woff2') format('woff2'),
+        url('bebas/bebasNeueRegular.woff') format('woff');
     font-display: swap;
     font-weight: 400;
     font-style: normal;

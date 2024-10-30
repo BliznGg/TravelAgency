@@ -41,6 +41,9 @@ export function createDateSelect() {
 }
 createDateSelect()
 
+/**
+ * Закрыть список селкте по клику вне селекта
+ */
 import {closeSelects} from './components/base-select/close-select-on-links.js'
 closeSelects()
 
