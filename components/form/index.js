@@ -1,7 +1,7 @@
 /**
  *  блок form__list меняет цвет button`ов в форме и при клике подсвечивает выбранный блок
  */
-export function changeTheColorOfTheButtons() {
+export function initSetBar() {
 
     const formButtonsNodeList = document.querySelectorAll('.form__description');
 
