@@ -26,8 +26,8 @@
 
 ## 🔗 Связаться со мной
 Если у вас есть вопросы или предложения, свяжитесь со мной:
-- **Telegram**: [@ваш_телеграмм](https://t.me/MicrovolnovkaSV4)
-- **Email**: [ваш_email](mailto:blizn.dev@gmail.com)
+- **Telegram**: [@мой_телеграмм](https://t.me/MicrovolnovkaSV4)
+- **Email**: [мой_email](mailto:blizn.dev@gmail.com)
 
 ---
 
