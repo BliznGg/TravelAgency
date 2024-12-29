@@ -5,7 +5,7 @@ import {initBurgerMenu} from './components/burger-menu/init-burger-menu.js'
 initBurgerMenu()
 
 /**
- * смена цвета кнопок при клике на них
+ * смена цвета кнопок бургера при клике на них
  */
 import {initSetBar} from "./components/form";
 initSetBar()
@@ -46,6 +46,21 @@ createDateSelect()
  */
 import {closeSelects} from './components/base-select/close-select-on-links.js'
 closeSelects()
+
+/**
+ * отображение background header при скроле
+ */
+
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 0) {
+        header.style.backgroundColor = 'white';
+    } else {
+        header.style.backgroundColor = '';
+    }
+});
+
 
 
 
