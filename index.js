@@ -7,7 +7,7 @@ initBurgerMenu()
 /**
  * смена цвета кнопок бургера при клике на них
  */
-import {initSetBar} from "./components/form";
+import {initSetBar} from "./components/form/index.js";
 initSetBar()
 
 /**
