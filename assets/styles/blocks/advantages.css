@@ -311,6 +311,10 @@
 }
 
 .advantages__description {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
     color: var(--black-100);
     font-family: var(--font-Poppins);
     font-size: 18px;
