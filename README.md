@@ -41,10 +41,14 @@
    ```cmd
    cd C:\путь\к\папке (пример: cd C:\Projects)
 5. Введите команду для клонирования репозитория
-   ```git clone git@github.com:BliznGg/TravelAgency.git
+   
+   ```сmd
+   git clone git@github.com:BliznGg/TravelAgency.git
 7. Перейдите в папку проекта: cd название_папки_проекта
 8. Откройте проект в браузере введя команду
-   ```start index.html
+   
+   ```cmd
+   start index.html
 10. Проект откроется в вашем браузере и будет готов к использованию.
 
 
