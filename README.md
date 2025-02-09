@@ -64,5 +64,5 @@
 
 | Имя    | Фамилия           | Рабочая почта                        | telegram                                                     |
 |--------|-------------------|--------------------------------------|--------------------------------------------------------------|
-Artsiom  |  Blizniuk         | [mail](mailto:blizntema@gmail.com)   | @bliznGG                                                     | 
+Artsiom  |  Blizniuk         | [mail] (mailto:blizntema@gmail.com)   | @bliznGG                                                     | 
  
